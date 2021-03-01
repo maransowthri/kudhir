@@ -1,3 +1,3 @@
-# Vanam
+# Kudhir
 
-This is an e-commerce application. It is is design phase now and yet to be deployed.
+Kudhir is a social app to help our society. It is is design phase now and yet to be deployed.
