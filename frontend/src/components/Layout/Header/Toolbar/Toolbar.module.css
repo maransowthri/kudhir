@@ -1,0 +1,34 @@
+.Toolbar {
+  padding: 1rem 3rem;
+  height: 50px;
+  position: relative;
+}
+
+.BurgerIcon {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #fff;
+  height: 4%;
+  width: 10%;
+}
+
+.BurgerIcon::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+}
+
+.BurgerIcon::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  background: #fff;
+  height: 100%;
+  width: 100%;
+}

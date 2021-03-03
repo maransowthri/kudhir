@@ -6,3 +6,21 @@
 .Header a {
   color: #fff;
 }
+
+.Mobile {
+  display: none;
+}
+
+.Computer {
+  display: block;
+}
+
+@media (max-width: 550px) {
+  .Mobile {
+    display: block;
+  }
+
+  .Computer {
+    display: none;
+  }
+}
