@@ -1,0 +1,32 @@
+.SideDrawer {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  background: #fafaf6;
+  height: 100vh;
+  transition: all 0.3s ease-in-out;
+}
+
+.SideDrawer ul {
+  margin: 5rem 0;
+}
+
+.SideDrawer ul li {
+  padding: 1rem 0;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.SideDrawer ul li a {
+  color: #000;
+}
+
+.OpenDrawer {
+  transform: translateX(0);
+}
+
+.CloseDrawer {
+  transform: translateX(-700px);
+}

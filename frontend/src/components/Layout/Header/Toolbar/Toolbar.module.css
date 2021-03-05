@@ -1,4 +1,7 @@
 .Toolbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   padding: 1rem 3rem;
   height: 50px;
   position: relative;

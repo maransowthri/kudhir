@@ -3,7 +3,7 @@ import React from "react";
 const StoryPage = (props) => {
   return (
     <div>
-      <h3>Story Page</h3>
+      <h3>Our Story Page</h3>
     </div>
   );
 };

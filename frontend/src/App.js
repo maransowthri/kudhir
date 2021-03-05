@@ -1,11 +1,12 @@
 import Layout from "./components/Layout/Layout";
-import "./App.css";
-import HomePage from "./components/HomePage/HomePage";
-import StoryPage from "./components/StoryPage/StoryPage";
 import { Route, Switch } from "react-router-dom";
-import MVCPage from "./components/MVCPage/MVCPage";
-import AboutPage from "./components/AboutPage/AboutPage";
-import SignInPage from "./components/SignInPage/SignInPage";
+
+import "./App.css";
+import HomePage from "./pages/HomePage/HomePage";
+import StoryPage from "./pages/StoryPage/StoryPage";
+import MVCPage from "./pages/MVCPage/MVCPage";
+import AboutPage from "./pages/AboutPage/AboutPage";
+import SignInPage from "./pages/SignInPage/SignInPage";
 
 function App() {
   return (
