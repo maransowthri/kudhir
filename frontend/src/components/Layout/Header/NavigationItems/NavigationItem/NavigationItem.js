@@ -6,7 +6,9 @@ import classes from "./NavigationItem.module.css";
 const NavigationItem = (props) => {
   return (
     <span className={classes.NavigationItem}>
-      <NavLink to={props.to}>{props.children}</NavLink>
+      <NavLink activeClassName={classes.Active} to={props.to}>
+        {props.children}
+      </NavLink>
     </span>
   );
 };

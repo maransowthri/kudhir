@@ -1,0 +1,55 @@
+.Carousel {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.Slider {
+  position: absolute;
+  top: 30%;
+  cursor: pointer;
+  background: #fdfdfd;
+  padding: 1rem 0.5rem;
+  border-radius: 5px;
+}
+
+.LeftSlider {
+  left: 2%;
+}
+
+.RightSlider {
+  right: 2%;
+}
+
+.CarouselContent img {
+  height: 60vh;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: all 0.3s ease-in;
+}
+
+.SlideImageLeft {
+  animation: animate-slide-left 0.3s ease-in forwards;
+}
+
+.SlideImageRight {
+  animation: animate-slide-right 0.3s ease-in forwards;
+}
+
+@keyframes animate-slide-left {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes animate-slide-right {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}

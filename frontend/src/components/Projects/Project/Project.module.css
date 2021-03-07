@@ -1,0 +1,45 @@
+.Project {
+  margin: 1rem 2rem;
+  box-shadow: 1px 1px 2px 1px #ccc;
+  border-radius: 10px;
+}
+
+.ProjectImageSection {
+  position: relative;
+}
+
+.ProjectImage {
+  background: center center no-repeat/cover;
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.Badge {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  background: #ffe8d6;
+  padding: 0.3rem;
+  border-radius: 10px;
+}
+
+.ProjectContent {
+  text-align: center;
+}
+
+.ProjectTitle,
+.ProjectAddress,
+.ProjectSocials,
+.CreatedTime {
+  margin: 1rem 0;
+}
+
+.MoreInfo {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.ProjectSocials a {
+  padding: 0 1rem;
+}

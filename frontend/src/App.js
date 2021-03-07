@@ -7,6 +7,7 @@ import StoryPage from "./pages/StoryPage/StoryPage";
 import MVCPage from "./pages/MVCPage/MVCPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import SignInPage from "./pages/SignInPage/SignInPage";
+import ProjectDetail from "./components/Projects/ProjectDetail/ProjectDetail";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/story" exact component={StoryPage} />
             <Route path="/signin" exact component={SignInPage} />
             <Route path="/about" exact component={AboutPage} />
+            <Route path="/projects/:slug" component={ProjectDetail} />
             <Route render={() => <h3>404 Page</h3>} />
           </Switch>
         </main>
