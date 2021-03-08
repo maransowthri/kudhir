@@ -1,0 +1,10 @@
+.ProjectDetailSection {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+@media (max-width: 550px) {
+  .ProjectDetailSection {
+    display: block;
+  }
+}

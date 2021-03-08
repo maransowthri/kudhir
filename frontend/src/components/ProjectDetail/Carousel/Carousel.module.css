@@ -1,6 +1,6 @@
 .Carousel {
-  margin-bottom: 1rem;
   position: relative;
+  margin: 1rem 2rem;
 }
 
 .Slider {
@@ -10,6 +10,7 @@
   background: #fdfdfd;
   padding: 1rem 0.5rem;
   border-radius: 5px;
+  z-index: 100;
 }
 
 .LeftSlider {
@@ -29,27 +30,27 @@
 }
 
 .SlideImageLeft {
-  animation: animate-slide-left 0.3s ease-in forwards;
+  animation: animate-slide-left 1s ease-in forwards;
 }
 
 .SlideImageRight {
-  animation: animate-slide-right 0.3s ease-in forwards;
+  animation: animate-slide-right 1s ease-in forwards;
 }
 
 @keyframes animate-slide-left {
   0% {
-    width: 0%;
+    opacity: 0.3;
   }
   100% {
-    width: 100%;
+    opacity: 1;
   }
 }
 
 @keyframes animate-slide-right {
   0% {
-    width: 0%;
+    opacity: 0.3;
   }
   100% {
-    width: 100%;
+    opacity: 1;
   }
 }

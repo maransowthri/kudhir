@@ -1,0 +1,21 @@
+.Mentions {
+  margin: 1rem 2rem;
+}
+
+.Mentions ul {
+  margin-bottom: 1rem;
+  margin: 1rem;
+  margin-left: 2rem;
+}
+
+.Mentions ul li {
+  margin-bottom: 1rem;
+}
+
+.Mentions ul li a {
+  text-decoration: underline;
+}
+
+.Mentions ul li p {
+  margin-top: 1rem;
+}

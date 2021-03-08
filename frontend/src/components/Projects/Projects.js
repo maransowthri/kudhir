@@ -29,7 +29,23 @@ export const SAMPLE_PROJECTS = [
     targeted_amount: 100000,
     received_amount: 34000,
     delivered_amount: 12000,
-    members: "None",
+    members: [
+      {
+        name: "Karan Sasthiri K",
+        bio: "Police Officer Sivaganga District",
+        portfolio: "https://www.google.com",
+      },
+      {
+        name: "Kaleeswaran R",
+        bio: "Army Man Ksahmir",
+        portfolio: "https://www.google.com",
+      },
+      {
+        name: "Mahesh Kannan R",
+        bio: "Police Officer",
+        portfolio: "https://www.google.com",
+      },
+    ],
   },
   {
     id: 2,
@@ -56,7 +72,23 @@ export const SAMPLE_PROJECTS = [
     targeted_amount: 100000,
     received_amount: 34000,
     delivered_amount: 12000,
-    members: "None",
+    members: [
+      {
+        name: "Karan Sasthiri K",
+        bio: "Police Officer Sivaganga District",
+        portfolio: "https://www.google.com",
+      },
+      {
+        name: "Kaleeswaran R",
+        bio: "Army Man Ksahmir",
+        portfolio: "https://www.google.com",
+      },
+      {
+        name: "Mahesh Kannan R",
+        bio: "Police Officer",
+        portfolio: "https://www.google.com",
+      },
+    ],
   },
   {
     id: 3,
@@ -83,7 +115,23 @@ export const SAMPLE_PROJECTS = [
     targeted_amount: 100000,
     received_amount: 34000,
     delivered_amount: 12000,
-    members: "None",
+    members: [
+      {
+        name: "Karan Sasthiri K",
+        bio: "Police Officer Sivaganga District",
+        portfolio: "https://www.google.com",
+      },
+      {
+        name: "Kaleeswaran R",
+        bio: "Army Man Ksahmir",
+        portfolio: "https://www.google.com",
+      },
+      {
+        name: "Mahesh Kannan R",
+        bio: "Police Officer",
+        portfolio: "https://www.google.com",
+      },
+    ],
   },
   {
     id: 4,
@@ -110,7 +158,23 @@ export const SAMPLE_PROJECTS = [
     targeted_amount: 100000,
     received_amount: 34000,
     delivered_amount: 12000,
-    members: "None",
+    members: [
+      {
+        name: "Karan Sasthiri K",
+        bio: "Police Officer Sivaganga District",
+        portfolio: "https://www.google.com",
+      },
+      {
+        name: "Kaleeswaran R",
+        bio: "Army Man Ksahmir",
+        portfolio: "https://www.google.com",
+      },
+      {
+        name: "Mahesh Kannan R",
+        bio: "Police Officer",
+        portfolio: "https://www.google.com",
+      },
+    ],
   },
 ];
 

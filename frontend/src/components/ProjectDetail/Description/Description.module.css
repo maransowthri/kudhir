@@ -1,0 +1,8 @@
+.Description {
+  margin: 1rem 2rem;
+}
+
+.Description h2,
+p {
+  margin-bottom: 1rem;
+}
