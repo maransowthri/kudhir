@@ -1,0 +1,43 @@
+.Donate {
+  margin: 1rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.DonateTitle {
+  margin-bottom: 1rem;
+}
+
+.Accordion {
+  background: #f0f0f0;
+  color: #444;
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+}
+
+.Accordion:hover {
+  background: #e8e8e8;
+}
+
+.Accordion:after {
+  content: "\002B";
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 0.2rem;
+}
+
+.Active {
+  background: #e8e8e8;
+}
+
+.Active:after {
+  content: "\2212";
+}
+
+.Panel {
+  padding: 0 0.5rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}

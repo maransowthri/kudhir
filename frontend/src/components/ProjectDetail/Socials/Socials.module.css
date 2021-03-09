@@ -1,3 +1,23 @@
 .Socials {
   margin: 1rem 2rem;
 }
+
+.SocialsTitle {
+  margin-bottom: 1rem;
+}
+
+.SocialsLinks {
+  text-align: center;
+  margin: 1rem;
+  margin-bottom: 2rem;
+}
+
+.SocialsLinks a {
+  margin-right: 1rem;
+}
+
+.SocialsLinks i {
+  padding: 0.5rem;
+  box-shadow: 3px 3px 5px 3px #ccc;
+  border-radius: 50%;
+}

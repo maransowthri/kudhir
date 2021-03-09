@@ -1,11 +1,15 @@
 import React from "react";
+import SocialLinks from "../../SocialLinks/SocialLinks";
 
 import classes from "./Socials.module.css";
 
-const Socials = (props) => {
+const Socials = ({ socials }) => {
   return (
     <div className={classes.Socials}>
-      <h2>Let's connect!</h2>
+      <h2 className={classes.SocialsTitle}>Let's connect!</h2>
+      <div className={classes.SocialsLinks}>
+        <SocialLinks socials={socials} />
+      </div>
     </div>
   );
 };

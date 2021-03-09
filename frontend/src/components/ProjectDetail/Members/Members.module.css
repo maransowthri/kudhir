@@ -1,21 +1,22 @@
-.Mentions {
+.Members {
   margin: 1rem 2rem;
+  margin-bottom: 2rem;
 }
 
-.Mentions ul {
+.Members ol {
   margin-bottom: 1rem;
   margin: 1rem;
   margin-left: 2rem;
 }
 
-.Mentions ul li {
+.Members ol li {
   margin-bottom: 1rem;
 }
 
-.Mentions ul li a {
+.Members ol li a {
   text-decoration: underline;
 }
 
-.Mentions ul li p {
+.Members ol li p {
   margin-top: 1rem;
 }

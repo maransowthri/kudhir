@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import SocialLinks from "../../SocialLinks/SocialLinks";
 
 import Button from "../../UI/Button/Button";
 import classes from "./Project.module.css";
@@ -32,18 +33,7 @@ const Project = ({ project, history }) => {
           </p>
         </div>
         <div className={classes.ProjectSocials}>
-          <a href={project.youtube_link} target="_blank" rel="noreferrer">
-            <i className="fab fa-youtube fa-2x"></i>
-          </a>
-          <a href={project.instagram_link} target="_blank" rel="noreferrer">
-            <i className="fab fa-instagram fa-2x"></i>
-          </a>
-          <a href={project.facebook_link} rel="noreferrer" target="_blank">
-            <i className="fab fa-facebook-square fa-2x"></i>
-          </a>
-          <a href={project.twitter_link} target="_blank" rel="noreferrer">
-            <i className="fab fa-twitter fa-2x"></i>
-          </a>
+          <SocialLinks socials={project.socials} />
         </div>
         <div className={classes.CreatedTime}>
           <p>Created on {project.created_on}</p>

@@ -1,10 +1,10 @@
 import React from "react";
 
-import classes from "./Mentions.module.css";
+import classes from "./Members.module.css";
 
-const Mentions = ({ project }) => {
-  const mentions = project.members.map((member) => (
-    <li>
+const Mentions = ({ members }) => {
+  const membersList = members.map((member) => (
+    <li key={member.id}>
       <strong>
         <a href={member.portfolio} target="_blank" rel="noreferrer">
           {member.name}
@@ -14,9 +14,9 @@ const Mentions = ({ project }) => {
     </li>
   ));
   return (
-    <div className={classes.Mentions}>
-      <h2>Honorable Mentions!</h2>
-      <ul>{mentions}</ul>
+    <div className={classes.Members}>
+      <h2>Honorable Mentions</h2>
+      <ol>{membersList}</ol>
     </div>
   );
 };

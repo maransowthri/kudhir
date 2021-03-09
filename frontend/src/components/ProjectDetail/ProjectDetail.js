@@ -3,25 +3,29 @@ import React from "react";
 import classes from "./ProjectDetail.module.css";
 import Carousel from "./Carousel/Carousel";
 import Description from "./Description/Description";
-import Payments from "./Payments/Payments";
+import Donate from "./Donate/Donate";
 import Amount from "./Amount/Amount";
-import Mentions from "./Mentions/Mentions";
+import Members from "./Members/Members";
 import Socials from "./Socials/Socials";
 
-const ProjectDetail = ({ project, detailsSectionRef }) => {
+const ProjectDetail = ({ project, detailsSectionRef, donateSectionRef }) => {
   return (
     <div className={classes.ProjectDetail}>
       <div>
         <Carousel images={project.images} />
-        <div ref={detailsSectionRef} className={classes.ProjectDetailSection}>
-          <div className={classes.ProjectDetailLeft}>
+        <div className={classes.ProjectDetailSection}>
+          <div ref={detailsSectionRef} className={classes.ProjectDetailLeft}>
             <Description project={project} />
-            <Amount project={project} />
-            <Mentions project={project} />
-            <Socials project={project} />
+            <Amount
+              targeted={project.targeted_amount}
+              received={project.received_amount}
+              delivered={project.delivered_amount}
+            />
+            <Members members={project.members} />
           </div>
-          <div className={classes.ProjectDetailRight}>
-            <Payments />
+          <div ref={donateSectionRef} className={classes.ProjectDetailRight}>
+            <Donate />
+            <Socials socials={project.socials} />
           </div>
         </div>
       </div>
