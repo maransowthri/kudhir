@@ -1,7 +1,11 @@
 import React, { useRef } from "react";
+import BankTransfer from "./BankTransfer/BankTransfer";
+import BitcoinTransfer from "./BitcoinTransfer/BitcoinTransfer";
 import classes from "./Donate.module.css";
+import OnlineBanking from "./OnlineBanking/OnlineBanking";
+import UPITransfer from "./UPITransfer/UPITransfer";
 
-const Payments = (props) => {
+const Payments = ({ project }) => {
   const onlineBankingRef = useRef();
   const upiRef = useRef();
   const bankRef = useRef();
@@ -29,7 +33,7 @@ const Payments = (props) => {
           Online Banking
         </h4>
         <div className={classes.Panel}>
-          <p>Onine Banking</p>
+          <OnlineBanking />
         </div>
         <h4
           ref={upiRef}
@@ -39,7 +43,7 @@ const Payments = (props) => {
           UPI Transfer
         </h4>
         <div className={classes.Panel}>
-          <p>UPI Transfer</p>
+          <UPITransfer upi_id={project.upi_id} upi_qr={project.upi_qr} />
         </div>
         <h4
           ref={bankRef}
@@ -49,7 +53,11 @@ const Payments = (props) => {
           Bank Transfer
         </h4>
         <div className={classes.Panel}>
-          <p>Bank Transfer</p>
+          <BankTransfer
+            acctName={project.bank_account_name}
+            acctNo={project.bank_account_number}
+            ifsc={project.ifsc_code}
+          />
         </div>
         <h4
           ref={bitcoinRef}
@@ -59,7 +67,7 @@ const Payments = (props) => {
           Bitcoin Transfer
         </h4>
         <div className={classes.Panel}>
-          <p>Bitcoin Transfer</p>
+          <BitcoinTransfer address={project.bitcoin_wallet_address} />
         </div>
       </div>
     </div>

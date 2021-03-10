@@ -24,7 +24,7 @@ const ProjectDetail = ({ project, detailsSectionRef, donateSectionRef }) => {
             <Members members={project.members} />
           </div>
           <div ref={donateSectionRef} className={classes.ProjectDetailRight}>
-            <Donate />
+            <Donate project={project} />
             <Socials socials={project.socials} />
           </div>
         </div>
