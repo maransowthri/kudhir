@@ -1,0 +1,21 @@
+.FundsTable {
+  margin: 2rem auto;
+  width: 80%;
+  text-align: left;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+.FundsTable th {
+  color: #fff;
+  background: #b7b7a4;
+}
+
+.FundsTable td,
+th {
+  padding: 1rem;
+}
+
+.FundsTable tr:nth-child(even) {
+  background: #f6f6f6;
+}

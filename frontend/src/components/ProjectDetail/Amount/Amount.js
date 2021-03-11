@@ -7,13 +7,13 @@ const Amount = ({ targeted, received, delivered }) => {
   return (
     <div className={classes.Amount}>
       <Button type="secondary" action={() => {}}>
-        <i className="fas fa-money-bill-alt"></i> Targeted: ₹ {targeted}
+        Targeted: ₹ {targeted}
       </Button>
       <Button type="secondary" action={() => {}}>
-        <i className="fas fa-money-bill-alt"></i> Received: ₹ {received}
+        Received: ₹ {received}
       </Button>
       <Button type="secondary" action={() => {}}>
-        <i className="fas fa-money-bill-alt"></i> Delivered: ₹ {delivered}
+        Delivered: ₹ {delivered}
       </Button>
     </div>
   );

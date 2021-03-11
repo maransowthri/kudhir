@@ -16,6 +16,18 @@ const ProjectDetailPage = (props) => {
     props.history.push("/");
   };
 
+  const goToReceivedFundsPage = () => {
+    props.history.push(`/projects/${project.slug}/received`);
+  };
+
+  const goToDeliveredFundsPage = () => {
+    props.history.push(`/projects/${project.slug}/delivered`);
+  };
+
+  const goToTargetedFundsPage = () => {
+    props.history.push(`/projects/${project.slug}/targeted`);
+  };
+
   const goToProjectDetails = () => {
     detailsSectionRef.current.scrollIntoView({
       behavior: "smooth",
@@ -40,16 +52,16 @@ const ProjectDetailPage = (props) => {
           Donate
         </Button>
         <Button type="secondary" action={goToProjectDetails}>
-          Project Details
+          About
         </Button>
-        <Button type="secondary" action={() => {}}>
-          Targeted Fund Details
+        <Button type="secondary" action={goToTargetedFundsPage}>
+          Targeted Funds
         </Button>
-        <Button type="secondary" action={() => {}}>
-          Received Fund Details
+        <Button type="secondary" action={goToReceivedFundsPage}>
+          Received Funds
         </Button>
-        <Button type="secondary" action={() => {}}>
-          Delivered Fund Details
+        <Button type="secondary" action={goToDeliveredFundsPage}>
+          Delivered Funds
         </Button>
       </div>
       <ProjectDetail

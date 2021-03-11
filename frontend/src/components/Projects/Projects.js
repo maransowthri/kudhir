@@ -15,7 +15,7 @@ export const SAMPLE_PROJECTS = [
     ifsc_code: "GFDS5672132",
     upi_id: "kudhir",
     upi_qr: "/images/qr.png",
-    bitcoin_wallet_address: "asdkj8743ei0dasdw?0===",
+    bitcoin_wallet_address: "asdkj8743ei0dasdw?0===ksjahdiwyeiwu43",
     city: "Sivaganga",
     state: "Tamil Nadu",
     zipcode: "630561",
@@ -49,6 +49,57 @@ export const SAMPLE_PROJECTS = [
         name: "Mahesh Kannan R",
         bio: "Police Officer",
         portfolio: "https://www.google.com",
+      },
+    ],
+    targeted_amount_details: [
+      {
+        id: 1,
+        description: "Buying bicycles for students",
+        amount: 35000,
+      },
+      {
+        id: 2,
+        description: "Buying water bottles for students",
+        amount: 15000,
+      },
+      {
+        id: 3,
+        description: "Building a water tank in school campus",
+        amount: 50000,
+      },
+    ],
+    received_amount_details: [
+      {
+        id: 1,
+        name: "Karan Sasthiri K",
+        donated_amount: 10000,
+        transaction_id: "123213219837",
+      },
+      {
+        id: 2,
+        name: "Kaleeswaran R",
+        donated_amount: 15000,
+        transaction_id: "1232134319837",
+      },
+      {
+        id: 3,
+        name: "Mahesh Kannan R",
+        donated_amount: 25000,
+        transaction_id: "1343213219837",
+      },
+    ],
+    delivered_amount_details: [
+      {
+        id: 1,
+        description: "Bought bicycles for students",
+        amount: 15000,
+        bill: "images/bill.png",
+      },
+      {
+        id: 2,
+        description: "Paid construction workers",
+        amount: 5000,
+        bill: "images/bill.png",
       },
     ],
   },
@@ -99,6 +150,57 @@ export const SAMPLE_PROJECTS = [
         portfolio: "https://www.google.com",
       },
     ],
+    targeted_amount_details: [
+      {
+        id: 1,
+        description: "Buying bicycles for students",
+        amount: 35000,
+      },
+      {
+        id: 2,
+        description: "Buying water bottles for students",
+        amount: 15000,
+      },
+      {
+        id: 3,
+        description: "Building a water tank in school campus",
+        amount: 50000,
+      },
+    ],
+    received_amount_details: [
+      {
+        id: 1,
+        name: "Karan Sasthiri K",
+        donated_amount: 10000,
+        transaction_id: "123213219837",
+      },
+      {
+        id: 2,
+        name: "Kaleeswaran R",
+        donated_amount: 15000,
+        transaction_id: "1232134319837",
+      },
+      {
+        id: 3,
+        name: "Mahesh Kannan R",
+        donated_amount: 25000,
+        transaction_id: "1343213219837",
+      },
+    ],
+    delivered_amount_details: [
+      {
+        id: 1,
+        description: "Bought bicycles for students",
+        amount: 15000,
+        bill: "images/bill.png",
+      },
+      {
+        id: 2,
+        description: "Paid construction workers",
+        amount: 5000,
+        bill: "images/bill.png",
+      },
+    ],
   },
   {
     id: 3,
@@ -147,6 +249,57 @@ export const SAMPLE_PROJECTS = [
         portfolio: "https://www.google.com",
       },
     ],
+    targeted_amount_details: [
+      {
+        id: 1,
+        description: "Buying bicycles for students",
+        amount: 35000,
+      },
+      {
+        id: 2,
+        description: "Buying water bottles for students",
+        amount: 15000,
+      },
+      {
+        id: 3,
+        description: "Building a water tank in school campus",
+        amount: 50000,
+      },
+    ],
+    received_amount_details: [
+      {
+        id: 1,
+        name: "Karan Sasthiri K",
+        donated_amount: 10000,
+        transaction_id: "123213219837",
+      },
+      {
+        id: 2,
+        name: "Kaleeswaran R",
+        donated_amount: 15000,
+        transaction_id: "1232134319837",
+      },
+      {
+        id: 3,
+        name: "Mahesh Kannan R",
+        donated_amount: 25000,
+        transaction_id: "1343213219837",
+      },
+    ],
+    delivered_amount_details: [
+      {
+        id: 1,
+        description: "Bought bicycles for students",
+        amount: 15000,
+        bill: "images/bill.png",
+      },
+      {
+        id: 2,
+        description: "Paid construction workers",
+        amount: 5000,
+        bill: "images/bill.png",
+      },
+    ],
   },
   {
     id: 4,
@@ -193,6 +346,57 @@ export const SAMPLE_PROJECTS = [
         name: "Mahesh Kannan R",
         bio: "Police Officer",
         portfolio: "https://www.google.com",
+      },
+    ],
+    targeted_amount_details: [
+      {
+        id: 1,
+        description: "Buying bicycles for students",
+        amount: 35000,
+      },
+      {
+        id: 2,
+        description: "Buying water bottles for students",
+        amount: 15000,
+      },
+      {
+        id: 3,
+        description: "Building a water tank in school campus",
+        amount: 50000,
+      },
+    ],
+    received_amount_details: [
+      {
+        id: 1,
+        name: "Karan Sasthiri K",
+        donated_amount: 10000,
+        transaction_id: "123213219837",
+      },
+      {
+        id: 2,
+        name: "Kaleeswaran R",
+        donated_amount: 15000,
+        transaction_id: "1232134319837",
+      },
+      {
+        id: 3,
+        name: "Mahesh Kannan R",
+        donated_amount: 25000,
+        transaction_id: "1343213219837",
+      },
+    ],
+    delivered_amount_details: [
+      {
+        id: 1,
+        description: "Bought bicycles for students",
+        amount: 15000,
+        bill: "images/bill.png",
+      },
+      {
+        id: 2,
+        description: "Paid construction workers",
+        amount: 5000,
+        bill: "images/bill.png",
       },
     ],
   },
