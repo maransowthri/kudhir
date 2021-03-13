@@ -51,24 +51,18 @@ export const SAMPLE_PROJECTS = [
         id: 1,
         description: "Buying bicycles for students",
         amount: 35000,
-        shop_details:
-          "A-one Super Market, 1/3 4th South Raja Street, Sivaganga 630561",
-        delivered: false,
+        delivered: true,
       },
       {
         id: 2,
         description: "Buying water bottles for students",
         amount: 15000,
-        shop_details:
-          "A-one Super Market, 1/3 4th South Raja Street, Sivaganga 630561",
         delivered: false,
       },
       {
         id: 3,
         description: "Building a water tank in school campus",
         amount: 50000,
-        shop_details:
-          "A-one Super Market, 1/3 4th South Raja Street, Sivaganga 630561",
         delivered: false,
       },
     ],
@@ -159,24 +153,18 @@ export const SAMPLE_PROJECTS = [
         id: 1,
         description: "Buying bicycles for students",
         amount: 35000,
-        shop_details:
-          "A-one Super Market, 1/3 4th South Raja Street, Sivaganga 630561",
         delivered: false,
       },
       {
         id: 2,
         description: "Buying water bottles for students",
         amount: 15000,
-        shop_details:
-          "A-one Super Market, 1/3 4th South Raja Street, Sivaganga 630561",
         delivered: false,
       },
       {
         id: 3,
         description: "Building a water tank in school campus",
         amount: 50000,
-        shop_details:
-          "A-one Super Market, 1/3 4th South Raja Street, Sivaganga 630561",
         delivered: false,
       },
     ],
@@ -267,24 +255,18 @@ export const SAMPLE_PROJECTS = [
         id: 1,
         description: "Buying bicycles for students",
         amount: 35000,
-        shop_details:
-          "A-one Super Market, 1/3 4th South Raja Street Sivaganga 630561",
         delivered: false,
       },
       {
         id: 2,
         description: "Buying water bottles for students",
         amount: 15000,
-        shop_details:
-          "A-one Super Market, 1/3 4th South Raja Street Sivaganga 630561",
         delivered: false,
       },
       {
         id: 3,
         description: "Building a water tank in school campus",
         amount: 50000,
-        shop_details:
-          "A-one Super Market, 1/3 4th South Raja Street Sivaganga 630561",
         delivered: false,
       },
     ],
@@ -375,24 +357,18 @@ export const SAMPLE_PROJECTS = [
         id: 1,
         description: "Buying bicycles for students",
         amount: 35000,
-        shop_details:
-          "A-one Super Market, 1/3 4th South Raja Street Sivaganga 630561",
         delivered: false,
       },
       {
         id: 2,
         description: "Buying water bottles for students",
         amount: 15000,
-        shop_details:
-          "A-one Super Market, 1/3 4th South Raja Street Sivaganga 630561",
         delivered: false,
       },
       {
         id: 3,
         description: "Building a water tank in school campus",
         amount: 50000,
-        shop_details:
-          "A-one Super Market, 1/3 4th South Raja Street Sivaganga 630561",
         delivered: false,
       },
     ],

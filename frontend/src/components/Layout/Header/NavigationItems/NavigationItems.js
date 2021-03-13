@@ -7,10 +7,10 @@ const NavigationItems = (props) => {
     <div>
       <ul>
         <li>
-          <NavigationItem to="/mvc">MVC</NavigationItem>
+          <NavigationItem to="/members">Members</NavigationItem>
         </li>
         <li>
-          <NavigationItem to="/story">Story</NavigationItem>
+          <NavigationItem to="/feed">Feed</NavigationItem>
         </li>
         <li>
           <NavigationItem to="/about">About</NavigationItem>

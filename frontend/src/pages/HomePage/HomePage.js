@@ -9,7 +9,7 @@ const HomePage = (props) => {
 
   return (
     <div>
-      <p className={classes.HomePageTitle}>The people who need your help!</p>
+      <h3 className={classes.HomePageTitle}>The people who need your help!</h3>
       <Projects projects={projects} />
     </div>
   );

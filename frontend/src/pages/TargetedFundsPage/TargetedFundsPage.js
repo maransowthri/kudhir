@@ -7,9 +7,7 @@ import TargetedFundsTable from "../../components/TargetedFundsTable/TargetedFund
 const TargetedFundsPage = (props) => {
   const slug = props.match.params.slug;
   const project = SAMPLE_PROJECTS.find((project) => project.slug === slug);
-  const targetedFunds = project.targeted_funds.filter(
-    (item) => !item.delivered
-  );
+  const targetedFunds = project.targeted_funds;
   const targetedAmount = project.targeted_amount;
 
   return (

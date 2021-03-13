@@ -7,26 +7,31 @@ const TargetedFundsTable = ({ fundsList, totalAmount }) => {
   let fundsHeader = "";
   let fundsBody = [];
 
+  const deliveredHandler = (deliveredFlag) => {
+    const classeNames = deliveredFlag ? classes.Delivered : classes.Undelivered;
+    const icon = `fas fa-${deliveredFlag ? "check-circle" : "hourglass-half"}`;
+    return (
+      <span className={classeNames}>
+        <i className={icon}></i>
+      </span>
+    );
+  };
+
   if (window.screen.width <= 550) {
     fundsHeader = (
       <tr>
         <th>Total Targeted Fund: ₹ {totalAmount}</th>
       </tr>
     );
-    fundsBody = fundsList.map((item, index) => (
-      <tr key={index}>
+    fundsBody = fundsList.map((fund, index) => (
+      <tr key={fund.id}>
         <td>
-          {index + 1 + ". " + item.description}
+          {index + 1 + ". " + fund.description}
           <span className={classes.TableDataBlock}>
-            Needed: ₹ {item.amount}
+            Needed: ₹ {fund.amount}
           </span>
           <span className={classes.TableDataBlock}>
-            Shop Details: <br />{" "}
-            {item.shop_details.split(",").map((item) => (
-              <React.Fragment key={item}>
-                {item} <br />
-              </React.Fragment>
-            ))}
+            Delivered: {deliveredHandler(fund.delivered)}
           </span>
         </td>
       </tr>
@@ -37,21 +42,15 @@ const TargetedFundsTable = ({ fundsList, totalAmount }) => {
         <th>No.</th>
         <th>Description</th>
         <th>Needed</th>
-        <th>Shop Details</th>
+        <th>Delivered</th>
       </tr>
     );
-    fundsBody = fundsList.map((item, index) => (
-      <tr key={item.transaction_id}>
+    fundsBody = fundsList.map((fund, index) => (
+      <tr key={fund.id}>
         <td>{index + 1}</td>
-        <td>{item.description}</td>
-        <td>₹ {item.amount}</td>
-        <td>
-          {item.shop_details.split(",").map((item) => (
-            <React.Fragment key={item}>
-              {item} <br />
-            </React.Fragment>
-          ))}
-        </td>
+        <td>{fund.description}</td>
+        <td>₹ {fund.amount}</td>
+        <td>{deliveredHandler(fund.delivered)}</td>
       </tr>
     ));
   }

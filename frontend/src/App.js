@@ -3,8 +3,8 @@ import { Route, Switch } from "react-router-dom";
 
 import "./App.css";
 import HomePage from "./pages/HomePage/HomePage";
-import StoryPage from "./pages/StoryPage/StoryPage";
-import MVCPage from "./pages/MVCPage/MVCPage";
+import FeedPage from "./pages/FeedPage/FeedPage";
+import MembersPage from "./pages/MembersPage/MembersPage";
 import AboutPage from "./pages/AboutPage/AboutPage";
 import SignInPage from "./pages/SignInPage/SignInPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage/ProjectDetailPage";
@@ -19,8 +19,8 @@ function App() {
         <main className="Main">
           <Switch>
             <Route path="/" exact component={HomePage} />
-            <Route path="/mvc" exact component={MVCPage} />
-            <Route path="/story" exact component={StoryPage} />
+            <Route path="/members" exact component={MembersPage} />
+            <Route path="/feed" exact component={FeedPage} />
             <Route path="/signin" exact component={SignInPage} />
             <Route path="/about" exact component={AboutPage} />
             <Route path="/projects/:slug" exact component={ProjectDetailPage} />

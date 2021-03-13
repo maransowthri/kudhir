@@ -13,15 +13,15 @@ const ReceivedFundsTable = ({ fundsList, totalAmount }) => {
         <th>Total Received Fund: ₹ {totalAmount}</th>
       </tr>
     );
-    fundsBody = fundsList.map((item, index) => (
-      <tr key={index}>
+    fundsBody = fundsList.map((fund, index) => (
+      <tr key={fund.id}>
         <td>
-          {index + 1 + ". " + item.name}
+          {index + 1 + ". " + fund.name}
           <span className={classes.TableDataBlock}>
-            Donated: ₹ {item.amount}
+            Donated: ₹ {fund.amount}
           </span>
           <span className={classes.TableDataBlock}>
-            Transaction ID: {item.transaction_id}
+            Transaction ID: {fund.transaction_id}
           </span>
         </td>
       </tr>
@@ -35,12 +35,12 @@ const ReceivedFundsTable = ({ fundsList, totalAmount }) => {
         <th>Transaction ID</th>
       </tr>
     );
-    fundsBody = fundsList.map((item, index) => (
-      <tr key={item.transaction_id}>
+    fundsBody = fundsList.map((fund, index) => (
+      <tr key={fund.id}>
         <td>{index + 1}</td>
-        <td>{item.name}</td>
-        <td>₹ {item.amount}</td>
-        <td>{item.transaction_id}</td>
+        <td>{fund.name}</td>
+        <td>₹ {fund.amount}</td>
+        <td>{fund.transaction_id}</td>
       </tr>
     ));
   }

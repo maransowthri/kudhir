@@ -13,15 +13,15 @@ const DeliveredFundsTable = ({ fundsList, totalAmount }) => {
         <th>Total Delivered Fund: ₹ {totalAmount}</th>
       </tr>
     );
-    fundsBody = fundsList.map((item, index) => (
-      <tr key={index}>
+    fundsBody = fundsList.map((fund, index) => (
+      <tr key={fund.id}>
         <td>
-          {index + 1 + ". " + item.description}
+          {index + 1 + ". " + fund.description}
           <span className={classes.TableDataBlock}>
-            Order Amount: ₹ {item.amount}
+            Order Amount: ₹ {fund.amount}
           </span>
           <span className={classes.TableDataBlock}>
-            <a href={item.bill} rel="noreferrer" target="_blank" download>
+            <a href={fund.bill} rel="noreferrer" target="_blank" download>
               <i className="fas fa-file-invoice fa-2x"></i>
             </a>
           </span>
@@ -37,13 +37,13 @@ const DeliveredFundsTable = ({ fundsList, totalAmount }) => {
         <th>Bill</th>
       </tr>
     );
-    fundsBody = fundsList.map((item, index) => (
-      <tr key={item.index}>
+    fundsBody = fundsList.map((fund, index) => (
+      <tr key={fund.id}>
         <td>{index + 1}</td>
-        <td>{item.description}</td>
-        <td>₹ {item.amount}</td>
+        <td>{fund.description}</td>
+        <td>₹ {fund.amount}</td>
         <td>
-          <a href={item.bill} rel="noreferrer" target="_blank" download>
+          <a href={fund.bill} rel="noreferrer" target="_blank" download>
             <i className="fas fa-file-invoice fa-2x"></i>
           </a>
         </td>
