@@ -16,6 +16,10 @@ th {
   padding: 1rem;
 }
 
+.FundsTable td span {
+  margin: 1rem;
+}
+
 .FundsTable tr:nth-child(even) {
   background: #f6f6f6;
 }

@@ -4,7 +4,7 @@ import ProjectDetail from "../../components/ProjectDetail/ProjectDetail";
 import Button from "../../components/UI/Button/Button";
 import classes from "./ProjectDetailPage.module.css";
 
-import { SAMPLE_PROJECTS } from "../../components/Projects/Projects";
+import { SAMPLE_PROJECTS } from "../../projects";
 
 const ProjectDetailPage = (props) => {
   const detailsSectionRef = useRef();

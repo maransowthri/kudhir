@@ -4,7 +4,7 @@ import classes from "./ProjectDetail.module.css";
 import Carousel from "./Carousel/Carousel";
 import Description from "./Description/Description";
 import Donate from "./Donate/Donate";
-import Amount from "./Amount/Amount";
+import Funds from "./Funds/Funds";
 import Members from "./Members/Members";
 import Socials from "./Socials/Socials";
 
@@ -16,7 +16,7 @@ const ProjectDetail = ({ project, detailsSectionRef, donateSectionRef }) => {
         <div className={classes.ProjectDetailSection}>
           <div ref={detailsSectionRef} className={classes.ProjectDetailLeft}>
             <Description project={project} />
-            <Amount
+            <Funds
               targeted={project.targeted_amount}
               received={project.received_amount}
               delivered={project.delivered_amount}
