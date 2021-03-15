@@ -1,17 +1,16 @@
-.Member {
-  margin: 1rem 2rem;
+.Description {
   text-align: center;
-  padding: 1rem;
-  cursor: pointer;
+  margin: 1rem 0;
 }
 
-.MemberLogo {
+.Logo {
   background: center center no-repeat/cover;
   height: 200px;
   width: 200px;
   object-fit: cover;
 }
 
-.MemberName {
-  font-size: large;
+.Title,
+.Info {
+  margin: 0.5rem 0;
 }

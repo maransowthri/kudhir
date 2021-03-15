@@ -1,18 +1,24 @@
-.Members {
+.Title {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.People {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  justify-content: space-around;
+  margin: 0 3rem;
+  text-align: center;
 }
 
 @media (max-width: 780px) {
-  .Members {
+  .People {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 500px) {
-  .Members {
+  .People {
     margin: 0 1rem;
     grid-template-columns: 1fr;
   }

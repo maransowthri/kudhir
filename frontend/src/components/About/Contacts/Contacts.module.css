@@ -1,18 +1,23 @@
-.Members {
+.Title {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.Contacts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: center;
-  justify-content: space-around;
+  margin: 0 3rem;
+  text-align: center;
 }
 
 @media (max-width: 780px) {
-  .Members {
+  .Contacts {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 500px) {
-  .Members {
+  .Contacts {
     margin: 0 1rem;
     grid-template-columns: 1fr;
   }

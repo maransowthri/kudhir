@@ -1,7 +1,8 @@
 import React from "react";
-import FundsTable from "../FundsTable/FundsTable";
 
+import FundsTable from "../FundsTable/FundsTable";
 import classes from "./ReceivedFundsTable.module.css";
+import { fundFormatter } from "../../utils/fund";
 
 const ReceivedFundsTable = ({ fundsList, totalAmount }) => {
   let fundsHeader = "";
@@ -10,7 +11,7 @@ const ReceivedFundsTable = ({ fundsList, totalAmount }) => {
   if (window.screen.width <= 550) {
     fundsHeader = (
       <tr>
-        <th>Total Received Fund: ₹ {totalAmount}</th>
+        <th>Total Received Fund: ₹ {fundFormatter(totalAmount)}</th>
       </tr>
     );
     fundsBody = fundsList.map((fund, index) => (
@@ -18,7 +19,7 @@ const ReceivedFundsTable = ({ fundsList, totalAmount }) => {
         <td>
           {index + 1 + ". " + fund.name}
           <span className={classes.TableDataBlock}>
-            Donated: ₹ {fund.amount}
+            Donated: ₹ {fundFormatter(fund.amount)}
           </span>
           <span className={classes.TableDataBlock}>
             Transaction ID: {fund.transaction_id}
@@ -39,7 +40,7 @@ const ReceivedFundsTable = ({ fundsList, totalAmount }) => {
       <tr key={fund.id}>
         <td>{index + 1}</td>
         <td>{fund.name}</td>
-        <td>₹ {fund.amount}</td>
+        <td>₹ {fundFormatter(fund.amount)}</td>
         <td>{fund.transaction_id}</td>
       </tr>
     ));

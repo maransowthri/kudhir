@@ -1,7 +1,8 @@
 import React from "react";
-import FundsTable from "../FundsTable/FundsTable";
 
+import FundsTable from "../FundsTable/FundsTable";
 import classes from "./TargetedFundsTable.module.css";
+import { fundFormatter } from "../../utils/fund";
 
 const TargetedFundsTable = ({ fundsList, totalAmount }) => {
   let fundsHeader = "";
@@ -20,7 +21,7 @@ const TargetedFundsTable = ({ fundsList, totalAmount }) => {
   if (window.screen.width <= 550) {
     fundsHeader = (
       <tr>
-        <th>Total Targeted Fund: ₹ {totalAmount}</th>
+        <th>Total Targeted Fund: ₹ {fundFormatter(totalAmount)}</th>
       </tr>
     );
     fundsBody = fundsList.map((fund, index) => (
@@ -28,7 +29,7 @@ const TargetedFundsTable = ({ fundsList, totalAmount }) => {
         <td>
           {index + 1 + ". " + fund.description}
           <span className={classes.TableDataBlock}>
-            Needed: ₹ {fund.amount}
+            Needed: ₹ {fundFormatter(fund.amount)}
           </span>
           <span className={classes.TableDataBlock}>
             Delivered: {deliveredHandler(fund.delivered)}
@@ -49,7 +50,7 @@ const TargetedFundsTable = ({ fundsList, totalAmount }) => {
       <tr key={fund.id}>
         <td>{index + 1}</td>
         <td>{fund.description}</td>
-        <td>₹ {fund.amount}</td>
+        <td>₹ {fundFormatter(fund.amount)}</td>
         <td>{deliveredHandler(fund.delivered)}</td>
       </tr>
     ));

@@ -1,5 +1,5 @@
 import React from "react";
-import SocialLinks from "../../SocialLinks/SocialLinks";
+import SocialLinks from "../../UI/SocialLinks/SocialLinks";
 
 import classes from "./Socials.module.css";
 

@@ -1,9 +1,10 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import SocialLinks from "../../SocialLinks/SocialLinks";
+import SocialLinks from "../../UI/SocialLinks/SocialLinks";
 
 import Button from "../../UI/Button/Button";
 import classes from "./Project.module.css";
+import { fundFormatter } from "../../../utils/fund";
 
 const Project = ({ project, history }) => {
   const openProjectDetails = () => {
@@ -20,7 +21,7 @@ const Project = ({ project, history }) => {
         />
         <h3>
           <span className={classes.Badge}>
-            Received: ₹{project.received_amount}
+            Received: ₹{fundFormatter(project.received_amount)}
           </span>
         </h3>
       </div>

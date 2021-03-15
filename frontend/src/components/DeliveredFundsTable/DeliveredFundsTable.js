@@ -2,6 +2,7 @@ import React from "react";
 
 import FundsTable from "../FundsTable/FundsTable";
 import classes from "./DeliveredFundsTable.module.css";
+import { fundFormatter } from "../../utils/fund";
 
 const DeliveredFundsTable = ({ fundsList, totalAmount }) => {
   let fundsHeader = "";
@@ -10,7 +11,7 @@ const DeliveredFundsTable = ({ fundsList, totalAmount }) => {
   if (window.screen.width <= 550) {
     fundsHeader = (
       <tr>
-        <th>Total Delivered Fund: ₹ {totalAmount}</th>
+        <th>Total Delivered Fund: ₹ {fundFormatter(totalAmount)}</th>
       </tr>
     );
     fundsBody = fundsList.map((fund, index) => (
@@ -18,7 +19,7 @@ const DeliveredFundsTable = ({ fundsList, totalAmount }) => {
         <td>
           {index + 1 + ". " + fund.description}
           <span className={classes.TableDataBlock}>
-            Order Amount: ₹ {fund.amount}
+            Order Amount: ₹ {fundFormatter(fund.amount)}
           </span>
           <span className={classes.TableDataBlock}>
             <a href={fund.bill} rel="noreferrer" target="_blank" download>
@@ -41,7 +42,7 @@ const DeliveredFundsTable = ({ fundsList, totalAmount }) => {
       <tr key={fund.id}>
         <td>{index + 1}</td>
         <td>{fund.description}</td>
-        <td>₹ {fund.amount}</td>
+        <td>₹ {fundFormatter(fund.amount)}</td>
         <td>
           <a href={fund.bill} rel="noreferrer" target="_blank" download>
             <i className="fas fa-file-invoice fa-2x"></i>

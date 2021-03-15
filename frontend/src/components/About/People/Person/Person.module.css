@@ -1,17 +1,15 @@
-.Member {
+.Person {
   margin: 1rem 2rem;
-  text-align: center;
   padding: 1rem;
-  cursor: pointer;
+  box-shadow: 1px 1px 2px 1px #ccc;
+  border-radius: 10px;
 }
 
-.MemberLogo {
+.Picture {
   background: center center no-repeat/cover;
   height: 200px;
   width: 200px;
   object-fit: cover;
-}
-
-.MemberName {
-  font-size: large;
+  border-radius: 50%;
+  margin: 1rem 0;
 }

@@ -1,0 +1,47 @@
+.SignIn {
+  text-align: center;
+  width: 50%;
+  margin: 1rem auto;
+}
+
+.AuthForm {
+  box-shadow: 3px 3px 5px 3px #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.AuthFormHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.HeaderButtonActive {
+  box-shadow: 3px 3px 5px #ccc;
+}
+
+.AuthHeadButton {
+  padding: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.Title {
+  margin: 1rem 0;
+}
+
+.Info {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 780px) {
+  .SignIn {
+    width: 70%;
+  }
+}
+
+@media (max-width: 500px) {
+  .SignIn {
+    width: 80%;
+  }
+}

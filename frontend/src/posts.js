@@ -32,7 +32,6 @@ export const POSTS = [
       "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
     socials: [
       "https://maransowthri.netlify.app/",
-      "https://maransowthri.netlify.app/",
       "https://www.youtube.com/kudir",
       "https://www.instagram.com/kudir",
       "https://www.facebook.com/kudir",

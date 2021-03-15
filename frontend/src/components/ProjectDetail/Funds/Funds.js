@@ -3,29 +3,32 @@ import { withRouter } from "react-router-dom";
 
 import classes from "./Funds.module.css";
 import Button from "../../UI/Button/Button";
+import { fundFormatter } from "../../../utils/fund";
 
 const Amount = ({ targeted, received, delivered, history, location }) => {
+  const path = location.pathname;
+
   const targetedFundsHandler = () => {
-    history.push(`${location.pathname}/targeted`);
+    history.push(`${path}/targeted`);
   };
 
   const receivedFundsHandler = () => {
-    history.push(`${location.pathname}/received`);
+    history.push(`${path}/received`);
   };
   const deliveredFundsHandler = () => {
-    history.push(`${location.pathname}/delivered`);
+    history.push(`${path}/delivered`);
   };
 
   return (
     <div className={classes.Funds}>
       <Button type="secondary" action={targetedFundsHandler}>
-        Targeted: ₹ {targeted}
+        Targeted: ₹ {fundFormatter(targeted)}
       </Button>
       <Button type="secondary" action={receivedFundsHandler}>
-        Received: ₹ {received}
+        Received: ₹ {fundFormatter(received)}
       </Button>
       <Button type="secondary" action={deliveredFundsHandler}>
-        Delivered: ₹ {delivered}
+        Delivered: ₹ {fundFormatter(delivered)}
       </Button>
     </div>
   );

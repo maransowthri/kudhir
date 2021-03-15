@@ -1,7 +1,7 @@
 import React from "react";
 
 import classes from "./Post.module.css";
-import SocialLinks from "../../SocialLinks/SocialLinks";
+import SocialLinks from "../../UI/SocialLinks/SocialLinks";
 
 const Post = ({ title, message, postedOn, socials }) => {
   return (
