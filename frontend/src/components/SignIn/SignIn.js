@@ -19,15 +19,19 @@ const SignIn = (props) => {
         <div className={classes.AuthFormHeader}>
           <span
             onClick={() => authHandler("signin")}
-            className={
-              classes.AuthHeadButton + " " + classes.HeaderButtonActive
-            }
+            className={[
+              classes.AuthHeadButton,
+              authState === "signin" ? classes.HeaderButtonActive : null,
+            ].join(" ")}
           >
             Sign in
           </span>
           <span
             onClick={() => authHandler("signup")}
-            className={classes.AuthHeadButton}
+            className={[
+              classes.AuthHeadButton,
+              authState === "signin" ? null : classes.HeaderButtonActive,
+            ].join(" ")}
           >
             Sign up
           </span>

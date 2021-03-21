@@ -1,15 +1,10 @@
 import React from "react";
-import Input from "../../../UI/Input/Input";
+import DisabledInput from "../../../UI/DisabledInput/DisabledInput";
 
 const BitcoinTransfer = ({ address }) => {
-  const attrs = {
-    value: address,
-    disabled: true,
-  };
-
   return (
     <div>
-      <Input id="address" label="Address" attrs={attrs} />
+      <DisabledInput id="address" label="Address" value={address} />
     </div>
   );
 };

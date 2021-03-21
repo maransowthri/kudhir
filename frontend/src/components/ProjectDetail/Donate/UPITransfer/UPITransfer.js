@@ -1,16 +1,12 @@
 import classes from "./UPITransfer.module.css";
 import React from "react";
-import Input from "../../../UI/Input/Input";
+import DisabledInput from "../../../UI/DisabledInput/DisabledInput";
 
 const UPITransfer = ({ upi_id, upi_qr }) => {
-  const attrs = {
-    value: upi_id,
-    disabled: true,
-  };
   return (
     <div>
       <img className={classes.QRImage} src={upi_qr} alt="QR Code" />
-      <Input id="upiID" label="UPI ID" attrs={attrs} />
+      <DisabledInput id="upiID" label="UPI ID" value={upi_id} />
     </div>
   );
 };

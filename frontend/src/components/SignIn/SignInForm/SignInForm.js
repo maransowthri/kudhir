@@ -1,23 +1,25 @@
 import React from "react";
 
-import Input from "../../UI/Input/Input";
 import Button from "../../UI/Button/Button";
+import EditableInput from "../../UI/EditableInput/EditableInput";
 
 const SignInForm = (props) => {
   const emailAttrs = {
     type: "mail",
+    required: true,
   };
 
   const passwordAttrs = {
     type: "password",
+    required: true,
   };
 
   return (
-    <div>
-      <Input id="email" label="Email" attrs={emailAttrs} />
-      <Input id="password" label="Password" attrs={passwordAttrs} />
-      <Button type="primary">Register</Button>
-    </div>
+    <>
+      <EditableInput id="email" label="Email" attrs={emailAttrs} />
+      <EditableInput id="password" label="Password" attrs={passwordAttrs} />
+      <Button type="primary">Sign in</Button>
+    </>
   );
 };
 

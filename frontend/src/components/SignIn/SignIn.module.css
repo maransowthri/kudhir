@@ -1,7 +1,7 @@
 .SignIn {
-  text-align: center;
-  width: 50%;
-  margin: 1rem auto;
+  width: 35%;
+  margin: 2rem auto;
+  margin-bottom: 3rem;
 }
 
 .AuthForm {
@@ -10,20 +10,28 @@
   padding: 1rem;
 }
 
+.Title,
+.Info {
+  text-align: center;
+}
+
 .AuthFormHeader {
   display: flex;
   align-items: center;
   justify-content: space-around;
-}
-
-.HeaderButtonActive {
-  box-shadow: 3px 3px 5px #ccc;
+  text-align: center;
 }
 
 .AuthHeadButton {
   padding: 1rem;
   cursor: pointer;
   width: 100%;
+  transition: all 0.3s ease;
+}
+
+.HeaderButtonActive {
+  font-size: large;
+  border-bottom: 3px solid #ffe8d6;
 }
 
 .Title {
@@ -36,7 +44,7 @@
 
 @media (max-width: 780px) {
   .SignIn {
-    width: 70%;
+    width: 60%;
   }
 }
 

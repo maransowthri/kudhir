@@ -1,4 +1,4 @@
-.Input {
+.DisabledInput {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
@@ -8,19 +8,16 @@
   margin: 1rem;
 }
 
-.Input i {
+.DisabledInput i {
   position: absolute;
   top: 5px;
   right: 5px;
   cursor: pointer;
 }
 
-.InputBox {
+.DisabledInputBox {
   padding: 0.5rem 1rem;
   border: 1px solid #333;
   border-radius: 5px;
-}
-
-.Disabled {
   background: #e8e8e8;
 }
