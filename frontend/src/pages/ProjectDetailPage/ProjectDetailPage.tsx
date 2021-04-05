@@ -12,8 +12,8 @@ interface IRouterParams {
 interface IProps extends RouteComponentProps<IRouterParams> {}
 
 const ProjectDetailPage: React.FC<IProps> = ({ match, history }) => {
-  const detailsSectionRef = useRef<HTMLDivElement>();
-  const donateSectionRef = useRef<HTMLDivElement>();
+  const detailsSectionRef = useRef<HTMLDivElement>(null);
+  const donateSectionRef = useRef<HTMLDivElement>(null);
   const slug = match.params.slug;
   const project = SAMPLE_PROJECTS.find((project) => project.slug === slug)!;
 

@@ -1,25 +1,25 @@
-export interface ITargetedFunds {
+export interface ITargetedFund {
   id: number;
   description: string;
   amount: number;
   delivered: boolean;
 }
 
-export interface IReceivedFunds {
+export interface IReceivedFund {
   id: number;
   name: string;
   amount: number;
   transaction_id: string;
 }
 
-export interface IDeliveredFunds {
+export interface IDeliveredFund {
   id: number;
   description: string;
   amount: number;
   bill: string;
 }
 
-export interface IMembers {
+export interface IMember {
   id: number;
   name: string;
   bio: string;
@@ -47,10 +47,10 @@ export interface IProject {
   targeted_amount: number;
   received_amount: number;
   delivered_amount: number;
-  members: IMembers[];
-  targeted_funds: ITargetedFunds[];
-  received_funds: IReceivedFunds[];
-  delivered_funds: IDeliveredFunds[];
+  members: IMember[];
+  targeted_funds: ITargetedFund[];
+  received_funds: IReceivedFund[];
+  delivered_funds: IDeliveredFund[];
 }
 
 export interface IProjectRouterParams {

@@ -1,0 +1,29 @@
+.FundsTableBody tr:nth-child(even) {
+  background: #f6f6f6;
+}
+
+.FundsTableBody td {
+  padding: 1rem;
+}
+
+.FundsTableBody td p {
+  margin: 1rem 0;
+}
+
+.MobileView {
+  display: none;
+}
+
+.DesktopView {
+  display: table-header-group;
+}
+
+@media (max-width: 650px) {
+  .MobileView {
+    display: table-row-group;
+  }
+
+  .DesktopView {
+    display: none;
+  }
+}

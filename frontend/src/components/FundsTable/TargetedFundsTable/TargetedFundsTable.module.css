@@ -1,11 +1,7 @@
-.TableDataBlock {
-  display: block;
-}
-
-.Delivered {
-  color: rgb(0, 208, 156);
-}
-
-.Undelivered {
-  color: #ffa500;
+.TargetedFundsTable {
+  margin: 2rem auto;
+  width: 80%;
+  text-align: left;
+  border-spacing: 0;
+  border: 1px solid #ddd;
 }

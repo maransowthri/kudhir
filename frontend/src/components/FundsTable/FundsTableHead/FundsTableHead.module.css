@@ -1,0 +1,26 @@
+.FundsTableHead {
+  color: #fff;
+  background: #b7b7a4;
+}
+
+.FundsTableHead th {
+  padding: 1rem;
+}
+
+.MobileView {
+  display: none;
+}
+
+.DesktopView {
+  display: table-header-group;
+}
+
+@media (max-width: 650px) {
+  .MobileView {
+    display: table-row-group;
+  }
+
+  .DesktopView {
+    display: none;
+  }
+}
