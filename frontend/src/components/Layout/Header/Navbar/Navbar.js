@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../../../UI/Logo/Logo";
+import Logo from "components/UI/Logo/Logo";
 import { Link } from "react-router-dom";
 
 import classes from "./Navbar.module.css";

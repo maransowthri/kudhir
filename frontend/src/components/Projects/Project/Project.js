@@ -1,10 +1,10 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import SocialLinks from "../../UI/SocialLinks/SocialLinks";
+import SocialLinks from "components/UI/SocialLinks/SocialLinks";
 
-import Button from "../../UI/Button/Button";
+import Button from "components/UI/Button/Button";
 import classes from "./Project.module.css";
-import { fundFormatter } from "../../../utils/fund";
+import { fundFormatter } from "utils/fund";
 
 const Project = ({ project, history }) => {
   const openProjectDetails = () => {

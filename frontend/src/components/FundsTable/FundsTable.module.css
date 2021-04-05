@@ -4,10 +4,9 @@
   text-align: left;
   border-spacing: 0;
   border: 1px solid #ddd;
-  border-radius: 10px;
 }
 
-.FundsTable th {
+.FundsTableHead {
   color: #fff;
   background: #b7b7a4;
 }
@@ -17,18 +16,28 @@ th {
   padding: 1rem;
 }
 
-.FundsTable td span {
+.FundsTable td p {
   margin: 1rem 0;
 }
 
-.FundsTable tr:nth-child(even) {
+.FundsTableBody tr:nth-child(even) {
   background: #f6f6f6;
 }
 
-.FundsTable thead tr:first-child th:first-child {
-  border-top-left-radius: 10px;
+.MobileView {
+  display: none;
 }
 
-.FundsTable thead tr:first-child th:last-child {
-  border-top-right-radius: 10px;
+.DesktopView {
+  display: table-header-group;
+}
+
+@media (max-width: 650px) {
+  .MobileView {
+    display: table-row-group;
+  }
+
+  .DesktopView {
+    display: none;
+  }
 }

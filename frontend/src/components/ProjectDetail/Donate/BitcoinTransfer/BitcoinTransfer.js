@@ -1,5 +1,5 @@
 import React from "react";
-import DisabledInput from "../../../UI/DisabledInput/DisabledInput";
+import DisabledInput from "components/UI/DisabledInput/DisabledInput";
 
 const BitcoinTransfer = ({ address }) => {
   return (

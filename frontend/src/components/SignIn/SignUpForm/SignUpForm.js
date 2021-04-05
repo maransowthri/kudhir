@@ -1,7 +1,7 @@
 import React from "react";
 
-import EditableInput from "../../UI/EditableInput/EditableInput";
-import Button from "../../UI/Button/Button";
+import EditableInput from "components/UI/EditableInput/EditableInput";
+import Button from "components/UI/Button/Button";
 
 const SignUpForm = (props) => {
   const nameAttrs = {

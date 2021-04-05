@@ -2,8 +2,8 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 
 import classes from "./Funds.module.css";
-import Button from "../../UI/Button/Button";
-import { fundFormatter } from "../../../utils/fund";
+import Button from "components/UI/Button/Button";
+import { fundFormatter } from "utils/fund";
 
 const Amount = ({ targeted, received, delivered, history, location }) => {
   const path = location.pathname;

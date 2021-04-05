@@ -1,6 +1,6 @@
 import classes from "./UPITransfer.module.css";
 import React from "react";
-import DisabledInput from "../../../UI/DisabledInput/DisabledInput";
+import DisabledInput from "components/UI/DisabledInput/DisabledInput";
 
 const UPITransfer = ({ upi_id, upi_qr }) => {
   return (
