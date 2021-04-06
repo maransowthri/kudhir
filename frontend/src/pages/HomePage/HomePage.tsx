@@ -1,18 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Projects from "components/Projects/Projects";
 import classes from "./HomePage.module.css";
-import { SAMPLE_PROJECTS } from "dummy/projects";
 import { IProject } from "interfaces/project";
 
 const HomePage: React.FC = () => {
-  const projects: IProject[] = SAMPLE_PROJECTS.filter(
-    (project) => project.is_published
-  );
+  const [projects, setProjects] = useState<IProject[]>([]);
+  const [loadingState, setloadingState] = useState(false);
+
+  useEffect(() => {
+    setloadingState(true);
+    fetch("/api/projects")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setProjects(data.projects);
+        setloadingState(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setloadingState(false);
+      });
+  }, []);
 
   return (
     <div>
       <h3 className={classes.HomePageTitle}>The people who need your help!</h3>
-      <Projects projects={projects} />
+      {loadingState ? <p>Loading...</p> : <Projects projects={projects} />}
     </div>
   );
 };

@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import ProjectDetail from "components/ProjectDetail/ProjectDetail";
 import Button from "components/UI/Button/Button";
 import classes from "./ProjectDetailPage.module.css";
-import { SAMPLE_PROJECTS } from "dummy/projects";
 import { RouteComponentProps } from "react-router";
+import { IProject } from "interfaces/project";
 
 interface IRouterParams {
   slug: string;
@@ -12,25 +12,46 @@ interface IRouterParams {
 interface IProps extends RouteComponentProps<IRouterParams> {}
 
 const ProjectDetailPage: React.FC<IProps> = ({ match, history }) => {
+  const [project, setProject] = useState<IProject | null>(null);
   const detailsSectionRef = useRef<HTMLDivElement>(null);
   const donateSectionRef = useRef<HTMLDivElement>(null);
   const slug = match.params.slug;
-  const project = SAMPLE_PROJECTS.find((project) => project.slug === slug)!;
+
+  useEffect(() => {
+    fetch(`/api/projects/${slug}`)
+      .then((res) => {
+        console.log(res);
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setProject(data.project);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [slug]);
 
   const backToHome = () => {
     history.push("/");
   };
 
   const goToReceivedFundsPage = () => {
-    history.push(`/projects/${project.slug}/received`);
+    if (project) {
+      history.push(`/projects/${project.slug}/received`);
+    }
   };
 
   const goToDeliveredFundsPage = () => {
-    history.push(`/projects/${project.slug}/delivered`);
+    if (project) {
+      history.push(`/projects/${project.slug}/delivered`);
+    }
   };
 
   const goToTargetedFundsPage = () => {
-    history.push(`/projects/${project.slug}/targeted`);
+    if (project) {
+      history.push(`/projects/${project.slug}/targeted`);
+    }
   };
 
   const goToProjectDetails = () => {
@@ -69,11 +90,15 @@ const ProjectDetailPage: React.FC<IProps> = ({ match, history }) => {
           Delivered Funds
         </Button>
       </div>
-      <ProjectDetail
-        project={project}
-        donateSectionRef={donateSectionRef}
-        detailsSectionRef={detailsSectionRef}
-      />
+      {project ? (
+        <ProjectDetail
+          project={project}
+          donateSectionRef={donateSectionRef}
+          detailsSectionRef={detailsSectionRef}
+        />
+      ) : (
+        <p>Customized 404 Page</p>
+      )}
     </>
   );
 };
