@@ -14,7 +14,8 @@ const HomePage: React.FC = () => {
         return res.json();
       })
       .then((data) => {
-        setProjects(data.projects);
+        console.log(data);
+        setProjects(data);
         setloadingState(false);
       })
       .catch((err) => {

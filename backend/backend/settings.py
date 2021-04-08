@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'projects.apps.ProjectsConfig',
     'accounts.apps.AccountsConfig',
     'pages.apps.PagesConfig',
+    'funds.apps.FundsConfig'
 ]
 
 MIDDLEWARE = [
