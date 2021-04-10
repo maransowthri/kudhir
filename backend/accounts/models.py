@@ -26,9 +26,11 @@ class UserProfileManager(BaseUserManager):
 class UserProfile(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=50, unique=True)
     name = models.CharField(max_length=50)
+    bio = models.CharField(max_length=50, default='Social Worker')
+    portfolio = models.URLField(max_length=50, blank=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
-    created_on = models.DateTimeField(auto_now_add=True, editable=True)
+    created_on = models.DateTimeField(auto_now_add=True)
 
     objects = UserProfileManager()
     USERNAME_FIELD = 'email'
