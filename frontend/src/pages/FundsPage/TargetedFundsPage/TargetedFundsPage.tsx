@@ -1,27 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { RouteComponentProps } from "react-router";
 import ProjectCrumb from "components/UI/ProjectCrumb/ProjectCrumb";
-import { SAMPLE_PROJECTS } from "dummy/projects";
 import TargetedFundsTable from "components/FundsTable/TargetedFundsTable/TargetedFundsTable";
-import { IProject, IProjectRouterParams } from "interfaces/project";
+import { IProjectRouterParams } from "interfaces/project";
+import { ITargetedFunds } from "interfaces/funds";
 
 interface IProps extends RouteComponentProps<IProjectRouterParams> {}
 
 const TargetedFundsPage: React.FC<IProps> = (props) => {
   const slug = props.match.params.slug;
-  const project: IProject = SAMPLE_PROJECTS.find(
-    (project) => project.slug === slug
-  )!;
-  const targetedFunds = project.targeted_funds;
-  const targetedAmount = project.targeted_amount;
+  const [fundsList, setFundsList] = useState<ITargetedFunds | null>(null);
+  const [loadingState, setLoadingState] = useState(false);
 
+  useEffect(() => {
+    setLoadingState(true);
+    fetch(`/api/funds/${slug}/targeted`)
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setFundsList(data);
+        setLoadingState(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoadingState(false);
+      });
+  }, [slug]);
   return (
     <div>
       <ProjectCrumb slug={slug} />
-      <TargetedFundsTable
-        fundsList={targetedFunds}
-        totalAmount={targetedAmount}
-      />
+      {loadingState ? (
+        <p>Loading...</p>
+      ) : fundsList ? (
+        <TargetedFundsTable fundsList={fundsList} />
+      ) : (
+        <p>Error</p>
+      )}
     </div>
   );
 };

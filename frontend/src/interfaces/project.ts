@@ -1,35 +1,29 @@
-export interface ITargetedFund {
-  id: number;
-  description: string;
-  amount: number;
-  delivered: boolean;
-}
-
-export interface IReceivedFund {
-  id: number;
-  name: string;
-  amount: number;
-  transaction_id: string;
-}
-
-export interface IDeliveredFund {
-  id: number;
-  description: string;
-  amount: number;
-  bill: string;
-}
-
 export interface IMember {
-  id: number;
-  name: string;
-  bio: string;
-  portfolio: string;
+  user: {
+    id: number;
+    name: string;
+    bio: string;
+    portfolio: string;
+  };
 }
 
-export interface IProject {
+export interface IProjectList {
   id: number;
+  title: string;
   slug: string;
-  name: string;
+  city: string;
+  state: string;
+  zipcode: string;
+  created_on: string;
+  images: IProjectImage[];
+  socials: IProjectSocial[];
+  received_amount: number;
+}
+
+export interface IProjectDetail {
+  id: number;
+  title: string;
+  slug: string;
   description: string;
   bank_account_name: string;
   bank_account_number: string;
@@ -40,17 +34,21 @@ export interface IProject {
   city: string;
   state: string;
   zipcode: string;
-  images: string[];
-  socials: string[];
   created_on: string;
-  is_published: boolean;
+  images: IProjectImage[];
+  socials: IProjectSocial[];
   targeted_amount: number;
   received_amount: number;
   delivered_amount: number;
   members: IMember[];
-  targeted_funds: ITargetedFund[];
-  received_funds: IReceivedFund[];
-  delivered_funds: IDeliveredFund[];
+}
+
+export interface IProjectImage {
+  image: string;
+}
+
+export interface IProjectSocial {
+  link: string;
 }
 
 export interface IProjectRouterParams {

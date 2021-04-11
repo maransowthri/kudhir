@@ -6,10 +6,10 @@ import Donate from "./Donate/Donate";
 import Funds from "./Funds/Funds";
 import Members from "./Members/Members";
 import Socials from "./Socials/Socials";
-import { IProject } from "interfaces/project";
+import { IProjectDetail } from "interfaces/project";
 
 interface IProps {
-  project: IProject;
+  project: IProjectDetail;
   detailsSectionRef: React.RefObject<HTMLDivElement>;
   donateSectionRef: React.RefObject<HTMLDivElement>;
 }

@@ -1,4 +1,4 @@
-import { IProject } from "interfaces/project";
+import { IProjectDetail } from "interfaces/project";
 import React, { useRef } from "react";
 import BankTransfer from "./BankTransfer/BankTransfer";
 import BitcoinTransfer from "./BitcoinTransfer/BitcoinTransfer";
@@ -7,7 +7,7 @@ import OnlineBanking from "./OnlineBanking/OnlineBanking";
 import UPITransfer from "./UPITransfer/UPITransfer";
 
 interface IProps {
-  project: IProject;
+  project: IProjectDetail;
 }
 
 const Payments: React.FC<IProps> = ({ project }) => {

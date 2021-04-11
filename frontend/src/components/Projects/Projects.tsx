@@ -1,10 +1,10 @@
-import { IProject } from "interfaces/project";
+import { IProjectList } from "interfaces/project";
 import React from "react";
 import Project from "./Project/Project";
 import classes from "./Projects.module.css";
 
 interface IProps {
-  projects: IProject[];
+  projects: IProjectList[];
 }
 
 const Projects: React.FC<IProps> = ({ projects }) => {

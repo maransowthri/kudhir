@@ -1,19 +1,18 @@
 import React from "react";
-import { IReceivedFund } from "interfaces/project";
+import { IReceivedFunds } from "interfaces/funds";
 import ReceivedFundsTableHead from "./ReceivedFundsHead/ReceivedFundsHead";
 import ReceivedFundsTableBody from "./ReceivedFundsBody/ReceivedFundsBody";
 import classes from "./ReceivedFundsTable.module.css";
 
 interface IProps {
-  fundsList: IReceivedFund[];
-  totalAmount: number;
+  fundsList: IReceivedFunds;
 }
 
-const ReceivedFundsTable: React.FC<IProps> = ({ fundsList, totalAmount }) => {
+const ReceivedFundsTable: React.FC<IProps> = ({ fundsList }) => {
   return (
     <table className={classes.ReceivedFundsTable}>
-      <ReceivedFundsTableHead totalAmount={totalAmount} />
-      <ReceivedFundsTableBody fundsList={fundsList} />
+      <ReceivedFundsTableHead totalAmount={fundsList.totalAmount} />
+      <ReceivedFundsTableBody fundsList={fundsList.funds} />
     </table>
   );
 };

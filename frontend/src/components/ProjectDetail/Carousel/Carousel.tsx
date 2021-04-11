@@ -1,8 +1,9 @@
+import { IProjectImage } from "interfaces/project";
 import React, { useState, useCallback, useEffect } from "react";
 import classes from "./Carousel.module.css";
 
 interface IProps {
-  images: string[];
+  images: IProjectImage[];
 }
 
 const Carousel: React.FC<IProps> = ({ images }) => {
@@ -47,7 +48,7 @@ const Carousel: React.FC<IProps> = ({ images }) => {
               ? classes.SlideImageLeft
               : classes.SlideImageRight
           }
-          src={images[coverImageIndex]}
+          src={images[coverImageIndex].image}
           alt="People"
         />
       </div>

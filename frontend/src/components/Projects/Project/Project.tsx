@@ -4,10 +4,10 @@ import SocialLinks from "components/UI/SocialLinks/SocialLinks";
 import Button from "components/UI/Button/Button";
 import classes from "./Project.module.css";
 import { fundFormatter } from "utils/fund";
-import { IProject } from "interfaces/project";
+import { IProjectList } from "interfaces/project";
 
 interface IProps extends RouteComponentProps {
-  project: IProject;
+  project: IProjectList;
 }
 
 const Project: React.FC<IProps> = ({ project, history }) => {
@@ -20,8 +20,8 @@ const Project: React.FC<IProps> = ({ project, history }) => {
       <div className={classes.ProjectImageSection}>
         <img
           className={classes.ProjectImage}
-          src={project.images[0]}
-          alt={project.name}
+          src={project.images[0].image}
+          alt={project.title}
         />
         <h3>
           <span className={classes.Badge}>
@@ -31,7 +31,7 @@ const Project: React.FC<IProps> = ({ project, history }) => {
       </div>
       <div className={classes.ProjectContent}>
         <div className={classes.ProjectDetails}>
-          <h3 className={classes.ProjectTitle}>{project.name}</h3>
+          <h3 className={classes.ProjectTitle}>{project.title}</h3>
           <p className={classes.ProjectAddress}>
             <i className="fas fa-map-marker"></i> {project.city} {project.state}
             , {project.zipcode}

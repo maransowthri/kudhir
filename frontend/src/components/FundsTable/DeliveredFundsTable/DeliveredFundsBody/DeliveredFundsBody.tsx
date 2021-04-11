@@ -1,6 +1,6 @@
 import React from "react";
 import { fundFormatter } from "utils/fund";
-import { IDeliveredFund } from "interfaces/project";
+import { IDeliveredFund } from "interfaces/funds";
 import FundsTableBody from "components/FundsTable/FundsTableBody/FundsTableBody";
 
 interface IProps {

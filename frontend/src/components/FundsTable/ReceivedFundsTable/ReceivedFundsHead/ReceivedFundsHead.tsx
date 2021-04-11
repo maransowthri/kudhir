@@ -9,7 +9,7 @@ interface IProps {
 const ReceivedFundsHead: React.FC<IProps> = ({ totalAmount }) => {
   let mobileFundsHeader = (
     <tr>
-      <th>Total Received Fund: ₹ {fundFormatter(totalAmount)}</th>
+      <th>Total Received Fund: ₹ {fundFormatter(+totalAmount)}</th>
     </tr>
   );
 

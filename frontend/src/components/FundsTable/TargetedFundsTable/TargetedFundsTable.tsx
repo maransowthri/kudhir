@@ -1,4 +1,4 @@
-import { ITargetedFund } from "interfaces/project";
+import { ITargetedFunds } from "interfaces/funds";
 import React from "react";
 import TargetedFundsTableBody from "./TargetedFundsBody/TargetedFundsBody";
 import TargetedFundsTableHead from "./TargetedFundsHead/TargetedFundsHead";
@@ -6,15 +6,14 @@ import TargetedFundsTableHead from "./TargetedFundsHead/TargetedFundsHead";
 import classes from "./TargetedFundsTable.module.css";
 
 interface IProps {
-  fundsList: ITargetedFund[];
-  totalAmount: number;
+  fundsList: ITargetedFunds;
 }
 
-const TargetedFundsTable: React.FC<IProps> = ({ fundsList, totalAmount }) => {
+const TargetedFundsTable: React.FC<IProps> = ({ fundsList }) => {
   return (
     <table className={classes.TargetedFundsTable}>
-      <TargetedFundsTableHead totalAmount={totalAmount} />
-      <TargetedFundsTableBody fundsList={fundsList} />
+      <TargetedFundsTableHead totalAmount={fundsList.totalAmount} />
+      <TargetedFundsTableBody fundsList={fundsList.funds} />
     </table>
   );
 };

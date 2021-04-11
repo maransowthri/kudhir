@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from accounts.serializers import AccountSerializer
 from projects.models import Project
 from projects.models import ProjectImage, ProjectSocial, ProjectMember
 from accounts.models import UserProfile
@@ -15,16 +16,13 @@ class ProjectSocialSerializer(serializers.ModelSerializer):
         model = ProjectSocial
         fields = ('link',)
 
-class AccountSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = UserProfile
-        fields = ('id', 'name', 'bio', 'portfolio')
 
 class ProjectMemberSerializer(serializers.ModelSerializer):
     user = AccountSerializer(many=False, read_only=True)
     class Meta:
         model = ProjectMember
         fields = ('user',)
+
 
 class ProjectListSerializer(serializers.ModelSerializer):
     images = ProjectImageSerializer(many=True, read_only=True)

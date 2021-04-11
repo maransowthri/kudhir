@@ -13,10 +13,7 @@
   margin-bottom: 1rem;
 }
 
-.Members ol li a {
-  text-decoration: underline;
-}
-
 .Members ol li p {
   margin-top: 1rem;
+  font-size: small;
 }

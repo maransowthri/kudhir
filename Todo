@@ -1,0 +1,13 @@
+- Remove all useEffect API Calls & dummy data
+    - ProjectDetailPage
+    - FundsPage
+        - Delivered
+        - Targeted
+        - Received
+    - Pages
+        - About
+        - Feed
+        - Members
+- Work on authentication
+- Design loader
+- Design 404 page

@@ -1,9 +1,10 @@
 import React from "react";
 import SocialLinks from "components/UI/SocialLinks/SocialLinks";
 import classes from "./Socials.module.css";
+import { IProjectSocial } from "interfaces/project";
 
 interface IProps {
-  socials: string[];
+  socials: IProjectSocial[];
 }
 
 const Socials: React.FC<IProps> = ({ socials }) => {

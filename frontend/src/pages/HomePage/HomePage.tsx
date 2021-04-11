@@ -1,33 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Projects from "components/Projects/Projects";
 import classes from "./HomePage.module.css";
-import { IProject } from "interfaces/project";
+import { fetchProjectList } from "store/actions/projectList";
+import { IProjectListState } from "store/reducers/projectList";
+import { IProjectList } from "interfaces/project";
+
+type ProjectListSelectorType = { projectList: IProjectListState };
 
 const HomePage: React.FC = () => {
-  const [projects, setProjects] = useState<IProject[]>([]);
-  const [loadingState, setloadingState] = useState(false);
+  const dispatch = useDispatch();
+  const projects = useSelector<ProjectListSelectorType, IProjectList[] | null>(
+    (state) => state.projectList.projects
+  );
+  const loading = useSelector<ProjectListSelectorType, boolean>(
+    (state) => state.projectList.loading
+  );
+  const error = useSelector<ProjectListSelectorType, string>(
+    (state) => state.projectList.error
+  );
 
   useEffect(() => {
-    setloadingState(true);
-    fetch("/api/projects")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setProjects(data);
-        setloadingState(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        setloadingState(false);
-      });
-  }, []);
+    dispatch(fetchProjectList());
+  }, [dispatch]);
 
   return (
     <div>
       <h3 className={classes.HomePageTitle}>The people who need your help!</h3>
-      {loadingState ? <p>Loading...</p> : <Projects projects={projects} />}
+      {loading ? (
+        <p>Loading...</p>
+      ) : projects ? (
+        <Projects projects={projects} />
+      ) : (
+        <p>{error}</p>
+      )}
     </div>
   );
 };

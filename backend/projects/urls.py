@@ -1,10 +1,10 @@
 from django.urls import path
-from projects.views import getProjects, getProject
+from projects.views import get_projects, get_project
 
 
 app_name = 'projects'
 
 urlpatterns = [
-    path('projects/', getProjects, name='projects'),
-    path('projects/<str:slug>', getProject, name='project'),
+    path('', get_projects, name='projects'),
+    path('<str:slug>', get_project, name='project'),
 ]

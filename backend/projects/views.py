@@ -8,7 +8,7 @@ from projects.serializers import ProjectListSerializer, ProjectDetailSerializer
 
 
 @api_view(['GET'])
-def getProjects(request):
+def get_projects(request):
     projects = Project.objects.filter(is_published=True).annotate(
                     received_amount=Sum('received_funds__amount'),
                 )
@@ -16,7 +16,7 @@ def getProjects(request):
     return Response(serializer.data)
 
 @api_view(['GET'])
-def getProject(request, slug):
+def get_project(request, slug):
     projects = Project.objects.filter(slug=slug).annotate(
                     received_amount=Sum('received_funds__amount'),
                     delivered_amount=Sum('delivered_funds__amount'),

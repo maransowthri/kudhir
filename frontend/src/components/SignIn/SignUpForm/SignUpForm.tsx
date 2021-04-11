@@ -1,5 +1,3 @@
-import React from "react";
-
 import EditableInput from "components/UI/EditableInput/EditableInput";
 import Button from "components/UI/Button/Button";
 

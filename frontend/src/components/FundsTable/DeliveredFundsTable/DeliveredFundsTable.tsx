@@ -1,19 +1,18 @@
 import React from "react";
-import { IDeliveredFund } from "interfaces/project";
 import classes from "./DeliveredFundsTable.module.css";
 import DeliveredFundsHead from "./DeliveredFundsHead/DeliveredFundsHead";
 import DeliveredFundsBody from "./DeliveredFundsBody/DeliveredFundsBody";
+import { IDeliveredFunds } from "interfaces/funds";
 
 interface IProps {
-  fundsList: IDeliveredFund[];
-  totalAmount: number;
+  fundsList: IDeliveredFunds;
 }
 
-const DeliveredFundsTable: React.FC<IProps> = ({ fundsList, totalAmount }) => {
+const DeliveredFundsTable: React.FC<IProps> = ({ fundsList }) => {
   return (
     <table className={classes.DeliveredFundsTable}>
-      <DeliveredFundsHead totalAmount={totalAmount} />
-      <DeliveredFundsBody fundsList={fundsList} />
+      <DeliveredFundsHead totalAmount={fundsList.totalAmount} />
+      <DeliveredFundsBody fundsList={fundsList.funds} />
     </table>
   );
 };

@@ -1,21 +1,28 @@
+import { IProjectSocial } from "interfaces/project";
 import React from "react";
 
 interface IProps {
-  socials: string[];
+  socials: IProjectSocial[];
 }
 
 const SocialLinks: React.FC<IProps> = ({ socials }) => {
-  const SOCIALS = ["youtube", "instagram", "facebook", "twitter", "linkedin"];
+  const SAMPLE_SOCIALS = [
+    "youtube",
+    "instagram",
+    "facebook",
+    "twitter",
+    "linkedin",
+  ];
 
-  const links = socials.map((link) => {
-    const url = new URL(link);
+  const links = socials.map((social) => {
+    const url = new URL(social.link);
     const hostnameArr = url.hostname.split(".");
     const product = hostnameArr[hostnameArr.length - 2];
-    const icon = SOCIALS.includes(product)
+    const icon = SAMPLE_SOCIALS.includes(product)
       ? `fab fa-${product} fa-2x`
       : "fas fa-globe fa-2x";
     return (
-      <a key={product} href={link} target="_blank" rel="noreferrer">
+      <a key={product} href={social.link} target="_blank" rel="noreferrer">
         <i className={icon}></i>
       </a>
     );

@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./TargetedFundsBody.module.css";
 import { fundFormatter } from "utils/fund";
-import { ITargetedFund } from "interfaces/project";
+import { ITargetedFund } from "interfaces/funds";
 import FundsTableBody from "components/FundsTable/FundsTableBody/FundsTableBody";
 
 interface IProps {

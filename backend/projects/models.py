@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
-from django.conf import settings
+from accounts.models import UserProfile
 import os
 import uuid
 
@@ -61,7 +61,7 @@ class ProjectSocial(models.Model):
 
 class ProjectMember(models.Model):
     project = models.ForeignKey('Project', models.CASCADE, related_name='members')
-    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='member')
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='member')
 
     class Meta:
         unique_together = ('project', 'user')

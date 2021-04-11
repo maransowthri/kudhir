@@ -8,13 +8,11 @@ interface IProps {
 
 const Mentions: React.FC<IProps> = ({ members }) => {
   const membersList = members.map((member) => (
-    <li key={member.id}>
-      <strong>
-        <a href={member.portfolio} target="_blank" rel="noreferrer">
-          {member.name}
-        </a>
-      </strong>
-      <p>{member.bio}</p>
+    <li key={member.user.id}>
+      <a href={member.user.portfolio} target="_blank" rel="noreferrer">
+        {member.user.name}
+      </a>
+      <p>{member.user.bio}</p>
     </li>
   ));
   return (
