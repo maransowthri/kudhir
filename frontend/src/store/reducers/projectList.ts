@@ -1,5 +1,5 @@
 import { IProjectList } from "interfaces/project";
-import { ProjectListActionType } from "../actions/actionTypes";
+import { IProjectListDispatchType } from "store/actions/projectList";
 
 export interface IProjectListState {
   projects: IProjectList[] | null;
@@ -7,16 +7,9 @@ export interface IProjectListState {
   error: string;
 }
 
-export interface IProjectListAction {
-  type: ProjectListActionType;
-  payload: {
-    projects: IProjectList[];
-  };
-}
-
 type IProjectListMethod = (
   state: IProjectListState,
-  action: IProjectListAction
+  action: IProjectListDispatchType
 ) => IProjectListState;
 
 const initialState = {
@@ -36,7 +29,7 @@ const fetchProjectListSuccess: IProjectListMethod = (state, action) => {
   return {
     ...state,
     loading: false,
-    projects: action.payload.projects,
+    projects: action.payload?.projects!,
   };
 };
 
@@ -50,7 +43,7 @@ const fetchProjectListFailed: IProjectListMethod = (state, _) => {
 
 function reducer(
   state = initialState,
-  action: IProjectListAction
+  action: IProjectListDispatchType
 ): IProjectListState {
   switch (action.type) {
     case "FETCH_PROJECT_LIST_INPROGRESS":

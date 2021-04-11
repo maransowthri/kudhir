@@ -11,7 +11,7 @@ interface IProps {
 const DeliveredFundsTable: React.FC<IProps> = ({ fundsList }) => {
   return (
     <table className={classes.DeliveredFundsTable}>
-      <DeliveredFundsHead totalAmount={fundsList.totalAmount} />
+      <DeliveredFundsHead totalAmount={fundsList.total_amount} />
       <DeliveredFundsBody fundsList={fundsList.funds} />
     </table>
   );

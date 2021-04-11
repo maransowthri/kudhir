@@ -1,42 +1,37 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { IProjectRouterParams } from "interfaces/project";
 import ProjectCrumb from "components/UI/ProjectCrumb/ProjectCrumb";
 import ReceivedFundsTable from "components/FundsTable/ReceivedFundsTable/ReceivedFundsTable";
 import { RouteComponentProps } from "react-router";
 import { IReceivedFunds } from "interfaces/funds";
+import { IRootReducer } from "interfaces/store";
+import { IFundsState } from "store/reducers/funds";
+import { fetchFunds } from "store/actions/funds";
 
 interface IProps extends RouteComponentProps<IProjectRouterParams> {}
 
-const ReceivedFundsPage: React.FC<IProps> = (props) => {
-  const slug = props.match.params.slug;
-  const [fundsList, setFundsList] = useState<IReceivedFunds | null>(null);
-  const [loadingState, setLoadingState] = useState(false);
+const ReceivedFundsPage: React.FC<IProps> = ({ match }) => {
+  const dispatch = useDispatch();
+  const slug = match.params.slug;
+  const { funds, loading, error } = useSelector<IRootReducer, IFundsState>(
+    (state) => ({ ...state.funds })
+  );
+  console.log(funds);
 
   useEffect(() => {
-    setLoadingState(true);
-    fetch(`/api/funds/${slug}/received`)
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setFundsList(data);
-        setLoadingState(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        setLoadingState(false);
-      });
-  }, [slug]);
+    dispatch(fetchFunds(slug, "RECEIVED"));
+  }, [dispatch, slug]);
 
   return (
     <div>
       <ProjectCrumb slug={slug} />
-      {loadingState ? (
+      {loading ? (
         <p>Loading...</p>
-      ) : fundsList ? (
-        <ReceivedFundsTable fundsList={fundsList} />
+      ) : funds ? (
+        <ReceivedFundsTable fundsList={funds as IReceivedFunds} />
       ) : (
-        <p>Error</p>
+        <p>{error}</p>
       )}
     </div>
   );

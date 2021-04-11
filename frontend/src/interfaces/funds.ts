@@ -1,15 +1,17 @@
+export type FundsType = "DELIVERED" | "RECEIVED" | "TARGETED";
+
 export interface ITargetedFunds {
-  totalAmount: number;
+  total_amount: number;
   funds: ITargetedFund[];
 }
 
 export interface IReceivedFunds {
-  totalAmount: number;
+  total_amount: number;
   funds: IReceivedFund[];
 }
 
 export interface IDeliveredFunds {
-  totalAmount: number;
+  total_amount: number;
   funds: IDeliveredFund[];
 }
 

@@ -1,13 +1,10 @@
-- Remove all useEffect API Calls & dummy data
-    - ProjectDetailPage
-    - FundsPage
-        - Delivered
-        - Targeted
-        - Received
+- Fix funds table reset issue
+- Remove all fetch API Calls in components & dummy data
     - Pages
         - About
         - Feed
         - Members
-- Work on authentication
+- Add pagination for all tables
 - Design loader
 - Design 404 page
+- Work on authentication

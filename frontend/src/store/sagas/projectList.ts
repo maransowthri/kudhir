@@ -1,9 +1,9 @@
 import { IProjectList } from "interfaces/project";
 import { put } from "redux-saga/effects";
+import { IProjectListDispatchType } from "store/actions/projectList";
 import * as actions from "../actions";
-import { IProjectListAction } from "../reducers/projectList";
 
-export function* fetchProjectListSaga(_: IProjectListAction) {
+export function* fetchProjectListSaga(_: IProjectListDispatchType) {
   yield put(actions.fetchProjectListInProgress());
   try {
     const res: Response = yield fetch("/api/projects");

@@ -10,21 +10,15 @@ import { IProjectDetail } from "interfaces/project";
 
 interface IProps {
   project: IProjectDetail;
-  detailsSectionRef: React.RefObject<HTMLDivElement>;
-  donateSectionRef: React.RefObject<HTMLDivElement>;
 }
 
-const ProjectDetail: React.FC<IProps> = ({
-  project,
-  detailsSectionRef,
-  donateSectionRef,
-}) => {
+const ProjectDetail: React.FC<IProps> = ({ project }) => {
   return (
     <div className={classes.ProjectDetail}>
       <div>
         <Carousel images={project.images} />
         <div className={classes.ProjectDetailSection}>
-          <div ref={detailsSectionRef} className={classes.ProjectDetailLeft}>
+          <div className={classes.ProjectDetailLeft}>
             <Description project={project} />
             <Funds
               targeted={project.targeted_amount}
@@ -33,7 +27,7 @@ const ProjectDetail: React.FC<IProps> = ({
             />
             <Members members={project.members} />
           </div>
-          <div ref={donateSectionRef} className={classes.ProjectDetailRight}>
+          <div className={classes.ProjectDetailRight}>
             <Donate project={project} />
             <Socials socials={project.socials} />
           </div>

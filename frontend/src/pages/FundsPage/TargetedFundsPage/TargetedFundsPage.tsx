@@ -1,41 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { RouteComponentProps } from "react-router";
 import ProjectCrumb from "components/UI/ProjectCrumb/ProjectCrumb";
 import TargetedFundsTable from "components/FundsTable/TargetedFundsTable/TargetedFundsTable";
 import { IProjectRouterParams } from "interfaces/project";
 import { ITargetedFunds } from "interfaces/funds";
+import { IRootReducer } from "interfaces/store";
+import { IFundsState } from "store/reducers/funds";
+import { fetchFunds } from "store/actions/funds";
 
 interface IProps extends RouteComponentProps<IProjectRouterParams> {}
 
-const TargetedFundsPage: React.FC<IProps> = (props) => {
-  const slug = props.match.params.slug;
-  const [fundsList, setFundsList] = useState<ITargetedFunds | null>(null);
-  const [loadingState, setLoadingState] = useState(false);
+const TargetedFundsPage: React.FC<IProps> = ({ match }) => {
+  const dispatch = useDispatch();
+  const { funds, loading, error } = useSelector<IRootReducer, IFundsState>(
+    (state) => ({ ...state.funds })
+  );
+  const slug = match.params.slug;
 
   useEffect(() => {
-    setLoadingState(true);
-    fetch(`/api/funds/${slug}/targeted`)
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        setFundsList(data);
-        setLoadingState(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        setLoadingState(false);
-      });
-  }, [slug]);
+    dispatch(fetchFunds(slug, "TARGETED"));
+  }, [dispatch, slug]);
+
   return (
     <div>
       <ProjectCrumb slug={slug} />
-      {loadingState ? (
+      {loading ? (
         <p>Loading...</p>
-      ) : fundsList ? (
-        <TargetedFundsTable fundsList={fundsList} />
+      ) : funds ? (
+        <TargetedFundsTable fundsList={funds as ITargetedFunds} />
       ) : (
-        <p>Error</p>
+        <p>{error}</p>
       )}
     </div>
   );

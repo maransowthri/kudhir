@@ -4,21 +4,14 @@ import Projects from "components/Projects/Projects";
 import classes from "./HomePage.module.css";
 import { fetchProjectList } from "store/actions/projectList";
 import { IProjectListState } from "store/reducers/projectList";
-import { IProjectList } from "interfaces/project";
-
-type ProjectListSelectorType = { projectList: IProjectListState };
+import { IRootReducer } from "interfaces/store";
 
 const HomePage: React.FC = () => {
   const dispatch = useDispatch();
-  const projects = useSelector<ProjectListSelectorType, IProjectList[] | null>(
-    (state) => state.projectList.projects
-  );
-  const loading = useSelector<ProjectListSelectorType, boolean>(
-    (state) => state.projectList.loading
-  );
-  const error = useSelector<ProjectListSelectorType, string>(
-    (state) => state.projectList.error
-  );
+  const { projects, loading, error } = useSelector<
+    IRootReducer,
+    IProjectListState
+  >((state) => ({ ...state.projectList }));
 
   useEffect(() => {
     dispatch(fetchProjectList());
