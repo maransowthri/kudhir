@@ -13,10 +13,12 @@ def get_people_filepath(instance, filename):
     filename = f'{uuid.uuid4()}.{ext}'
     return os.path.join(f'people/', filename)
 
+
 class Member(models.Model):
     name = models.CharField(max_length=50)
     website = models.URLField(max_length=250, blank=True)
     logo = models.ImageField(upload_to=get_member_filepath)
+    is_active = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -28,6 +30,7 @@ class People(models.Model):
     designation = models.CharField(max_length=100)
     portfolio = models.URLField(max_length=250, blank=True)
     image = models.ImageField(upload_to=get_people_filepath)
+    is_active = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -37,6 +40,7 @@ class People(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=200)
     message = models.TextField()
+    show = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
