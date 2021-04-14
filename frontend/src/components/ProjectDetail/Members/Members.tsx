@@ -1,9 +1,9 @@
-import { IMember } from "interfaces/project";
+import { IProjectMember } from "interfaces/project";
 import React from "react";
 import classes from "./Members.module.css";
 
 interface IProps {
-  members: IMember[];
+  members: IProjectMember[];
 }
 
 const Mentions: React.FC<IProps> = ({ members }) => {

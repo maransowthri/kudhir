@@ -11,8 +11,12 @@ const ReceivedFundsBody: React.FC<IProps> = ({ fundsList }) => {
   let mobileFundsBody = fundsList.map((fund, index) => (
     <tr key={fund.id}>
       <td>
-        <a href={fund.user.portfolio} target="_blank" rel="noreferrer">
-          {index + 1 + ". " + fund.user.name}
+        <a
+          href={fund.user ? fund.user.portfolio : "#"}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {index + 1 + ". " + (fund.user ? fund.user.name : "Unknown")}
         </a>
         <p>Donated: ₹ {fundFormatter(fund.amount)}</p>
         <p>Transaction ID: {fund.transaction_id}</p>
@@ -24,8 +28,12 @@ const ReceivedFundsBody: React.FC<IProps> = ({ fundsList }) => {
     <tr key={fund.id}>
       <td>{index + 1}</td>
       <td>
-        <a href={fund.user.portfolio} target="_blank" rel="noreferrer">
-          {fund.user.name}
+        <a
+          href={fund.user ? fund.user.portfolio : "#"}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {fund.user ? fund.user.name : "Unknown"}
         </a>
       </td>
       <td>₹ {fundFormatter(fund.amount)}</td>

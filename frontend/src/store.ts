@@ -1,15 +1,15 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import createSagaMiddleware from "redux-saga";
-import projectListReducer from "store/reducers/projectList";
-import projectDetailReducer from "store/reducers/projectDetail";
+import projectsReducer from "store/reducers/projects";
 import fundsReducer from "store/reducers/funds";
-import { watchProjectList, watchProjectDetail, watchFunds } from "store/sagas";
+import pagesReducer from "store/reducers/pages";
+import { watchProjects, watchFunds, watchPages } from "store/sagas";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 const rootReducer = combineReducers({
-  projectList: projectListReducer,
-  projectDetail: projectDetailReducer,
+  projects: projectsReducer,
   funds: fundsReducer,
+  pages: pagesReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();
@@ -19,8 +19,8 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(sagaMiddleware))
 );
 
-sagaMiddleware.run(watchProjectList);
-sagaMiddleware.run(watchProjectDetail);
+sagaMiddleware.run(watchProjects);
 sagaMiddleware.run(watchFunds);
+sagaMiddleware.run(watchPages);
 
 export default store;

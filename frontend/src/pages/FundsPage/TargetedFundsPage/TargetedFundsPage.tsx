@@ -8,10 +8,13 @@ import { ITargetedFunds } from "interfaces/funds";
 import { IRootReducer } from "interfaces/store";
 import { IFundsState } from "store/reducers/funds";
 import { fetchFunds } from "store/actions/funds";
+import Loader from "components/UI/Loader/Loader";
+import Alert from "components/UI/Alert/Alert";
 
 interface IProps extends RouteComponentProps<IProjectRouterParams> {}
 
 const TargetedFundsPage: React.FC<IProps> = ({ match }) => {
+  let result = null;
   const dispatch = useDispatch();
   const { funds, loading, error } = useSelector<IRootReducer, IFundsState>(
     (state) => ({ ...state.funds })
@@ -22,16 +25,18 @@ const TargetedFundsPage: React.FC<IProps> = ({ match }) => {
     dispatch(fetchFunds(slug, "TARGETED"));
   }, [dispatch, slug]);
 
+  if (loading) {
+    result = <Loader />;
+  } else if (funds) {
+    result = <TargetedFundsTable fundsList={funds as ITargetedFunds} />;
+  } else {
+    result = <Alert type="error" message={error} />;
+  }
+
   return (
     <div>
       <ProjectCrumb slug={slug} />
-      {loading ? (
-        <p>Loading...</p>
-      ) : funds ? (
-        <TargetedFundsTable fundsList={funds as ITargetedFunds} />
-      ) : (
-        <p>{error}</p>
-      )}
+      {result}
     </div>
   );
 };

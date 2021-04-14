@@ -1,10 +1,5 @@
-- Fix funds table reset issue
-- Remove all fetch API Calls in components & dummy data
-    - Pages
-        - About
-        - Feed
-        - Members
-- Add pagination for all tables
-- Design loader
+- Common method for load handling
 - Design 404 page
 - Work on authentication
+- Add search fields in projectList, Received, Delivered & Targeted Funds
+- Add pagination in projectList, Received, Delivered & Targeted Funds

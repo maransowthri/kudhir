@@ -4,11 +4,16 @@ import {
   ITargetedFunds,
 } from "interfaces/funds";
 import { put } from "redux-saga/effects";
-import { IFundsDispatchType } from "store/actions/funds";
-import * as actions from "../actions";
+import {
+  fetchFundsFailed,
+  fetchFundsInProgress,
+  fetchFundsSuccess,
+  IFundsDispatchType,
+} from "store/actions/funds";
 
 export function* fetchFundsSaga(action: IFundsDispatchType) {
-  yield put(actions.fetchFundsInProgress());
+  console.log(action);
+  yield put(fetchFundsInProgress());
   try {
     const res: Response = yield fetch(
       `/api/funds/${
@@ -19,8 +24,8 @@ export function* fetchFundsSaga(action: IFundsDispatchType) {
       | IDeliveredFunds
       | IReceivedFunds
       | ITargetedFunds = yield res.json();
-    yield put(actions.fetchFundsSuccess(data));
+    yield put(fetchFundsSuccess(data));
   } catch (err) {
-    yield put(actions.fetchFundsFailed());
+    yield put(fetchFundsFailed());
   }
 }

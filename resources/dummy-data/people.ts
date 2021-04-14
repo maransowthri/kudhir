@@ -1,4 +1,4 @@
-export const PEOPLE = [
+const PEOPLE = [
   {
     id: 1,
     name: "Maran Sowthri Kalailingam",

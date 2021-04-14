@@ -8,31 +8,36 @@ import { IReceivedFunds } from "interfaces/funds";
 import { IRootReducer } from "interfaces/store";
 import { IFundsState } from "store/reducers/funds";
 import { fetchFunds } from "store/actions/funds";
+import Loader from "components/UI/Loader/Loader";
+import Alert from "components/UI/Alert/Alert";
 
 interface IProps extends RouteComponentProps<IProjectRouterParams> {}
 
 const ReceivedFundsPage: React.FC<IProps> = ({ match }) => {
+  let result = null;
   const dispatch = useDispatch();
-  const slug = match.params.slug;
   const { funds, loading, error } = useSelector<IRootReducer, IFundsState>(
     (state) => ({ ...state.funds })
   );
-  console.log(funds);
+  const slug = match.params.slug;
 
   useEffect(() => {
+    console.log("ComponentDidMount");
     dispatch(fetchFunds(slug, "RECEIVED"));
   }, [dispatch, slug]);
+
+  if (loading) {
+    result = <Loader />;
+  } else if (funds) {
+    result = <ReceivedFundsTable fundsList={funds as IReceivedFunds} />;
+  } else {
+    result = <Alert type="error" message={error} />;
+  }
 
   return (
     <div>
       <ProjectCrumb slug={slug} />
-      {loading ? (
-        <p>Loading...</p>
-      ) : funds ? (
-        <ReceivedFundsTable fundsList={funds as IReceivedFunds} />
-      ) : (
-        <p>{error}</p>
-      )}
+      {result}
     </div>
   );
 };

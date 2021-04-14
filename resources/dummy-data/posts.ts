@@ -1,4 +1,4 @@
-export const SAMPLE_POST_SOCIALS = [
+const SAMPLE_POST_SOCIALS = [
   {
     id: 1,
     link: "https://maransowthri.netlify.app/",
@@ -13,7 +13,7 @@ export const SAMPLE_POST_SOCIALS = [
   },
 ];
 
-export const SAMPLE_POSTS = [
+const SAMPLE_POSTS = [
   {
     id: 1,
     title: "Released 1st version of Kudhir",

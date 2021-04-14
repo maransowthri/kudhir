@@ -1,9 +1,9 @@
 import { IFundsState } from "store/reducers/funds";
-import { IProjectDetailState } from "store/reducers/projectDetail";
-import { IProjectListState } from "store/reducers/projectList";
+import { IPagesState } from "store/reducers/pages";
+import { IProjectState } from "store/reducers/projects";
 
 export interface IRootReducer {
-  projectList: IProjectListState;
-  projectDetail: IProjectDetailState;
+  projects: IProjectState;
   funds: IFundsState;
+  pages: IPagesState;
 }

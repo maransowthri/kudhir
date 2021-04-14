@@ -1,4 +1,4 @@
-export interface IMember {
+export interface IProjectMember {
   user: {
     id: number;
     name: string;
@@ -40,7 +40,7 @@ export interface IProjectDetail {
   targeted_amount: number;
   received_amount: number;
   delivered_amount: number;
-  members: IMember[];
+  members: IProjectMember[];
 }
 
 export interface IProjectImage {
