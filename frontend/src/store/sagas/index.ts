@@ -1,7 +1,11 @@
 import { takeEvery, all } from "redux-saga/effects";
 import { fetchProjectListSaga, fetchProjectDetailSaga } from "./projects";
-import { fetchMembersSaga, fetchPeopleSaga, fetchPostsSaga } from "./people";
-import { fetchFundsSaga } from "./funds";
+import { fetchMembersSaga, fetchPeopleSaga, fetchPostsSaga } from "./pages";
+import {
+  fetchDeliveredFundsSaga,
+  fetchReceivedFundsSaga,
+  fetchTargetedFundsSaga,
+} from "./funds";
 import {
   FundsActionType,
   PagesActionType,
@@ -19,8 +23,15 @@ export function* watchProjects() {
 }
 
 export function* watchFunds() {
-  const actionType: FundsActionType = "FETCH_FUNDS_INIT";
-  yield takeEvery(actionType, fetchFundsSaga);
+  const deliveredFundsActionType: FundsActionType =
+    "FETCH_DELIVERED_FUNDS_INIT";
+  const receivedFundsActionType: FundsActionType = "FETCH_RECEIVED_FUNDS_INIT";
+  const targetedFundsActionType: FundsActionType = "FETCH_TARGETED_FUNDS_INIT";
+  yield all([
+    takeEvery(deliveredFundsActionType, fetchDeliveredFundsSaga),
+    takeEvery(receivedFundsActionType, fetchReceivedFundsSaga),
+    takeEvery(targetedFundsActionType, fetchTargetedFundsSaga),
+  ]);
 }
 
 export function* watchPages() {

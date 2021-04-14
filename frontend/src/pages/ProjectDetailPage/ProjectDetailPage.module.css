@@ -1,3 +1,7 @@
 .ProjectDetailPage {
   margin: 1rem;
 }
+
+.NoDataText {
+  text-align: center;
+}

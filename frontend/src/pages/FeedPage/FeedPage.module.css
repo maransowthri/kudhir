@@ -1,11 +1,11 @@
+.NoPostsText {
+  text-align: center;
+}
+
 .PageTitle {
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-size: x-large;
   font-weight: bold;
-}
-
-.NoDataText {
-  text-align: center;
 }

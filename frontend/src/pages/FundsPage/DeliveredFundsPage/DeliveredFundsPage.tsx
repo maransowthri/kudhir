@@ -4,12 +4,12 @@ import DeliveredFundsTable from "components/FundsTable/DeliveredFundsTable/Deliv
 import { IProjectRouterParams } from "interfaces/project";
 import ProjectCrumb from "components/UI/ProjectCrumb/ProjectCrumb";
 import { RouteComponentProps } from "react-router";
-import { IDeliveredFunds } from "interfaces/funds";
 import { IRootReducer } from "interfaces/store";
 import { IFundsState } from "store/reducers/funds";
-import { fetchFunds } from "store/actions/funds";
+import { fetchDeliveredFunds } from "store/actions/funds";
 import Loader from "components/UI/Loader/Loader";
 import Alert from "components/UI/Alert/Alert";
+import classes from "./DeliveredFundsPage.module.css";
 
 interface IProps extends RouteComponentProps<IProjectRouterParams> {}
 
@@ -17,25 +17,32 @@ const DeliveredFundsPage: React.FC<IProps> = ({ match }) => {
   let result = null;
   const dispatch = useDispatch();
   const slug = match.params.slug;
-  const { funds, loading, error } = useSelector<IRootReducer, IFundsState>(
-    (state) => ({ ...state.funds })
-  );
+  const { deliveredFunds, loading, error } = useSelector<
+    IRootReducer,
+    IFundsState
+  >((state) => ({ ...state.funds }));
 
   useEffect(() => {
-    dispatch(fetchFunds(slug, "DELIVERED"));
+    dispatch(fetchDeliveredFunds(slug));
   }, [dispatch, slug]);
 
   if (loading) {
     result = <Loader />;
-  } else if (funds) {
-    result = <DeliveredFundsTable fundsList={funds as IDeliveredFunds} />;
+  } else if (deliveredFunds) {
+    result = <DeliveredFundsTable fundsList={deliveredFunds} />;
   } else {
-    result = <Alert type="error" message={error} />;
+    result = (
+      <>
+        <Alert type="error" message={error} />
+        <p className={classes.NoDataText}>No details found.</p>
+      </>
+    );
   }
 
   return (
     <div>
       <ProjectCrumb slug={slug} />
+      <h3 className={classes.PageTitle}>Delivered Funds Details</h3>
       {result}
     </div>
   );

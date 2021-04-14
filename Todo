@@ -1,5 +1,12 @@
-- Common method for load handling
-- Design 404 page
+Tasks
 - Work on authentication
 - Add search fields in projectList, Received, Delivered & Targeted Funds
-- Add pagination in projectList, Received, Delivered & Targeted Funds
+- Add pagination in projectList, Received, Delivered & Targeted Funds.
+- Payment integration
+
+
+Fix:
+- custom hooks for load handling
+
+Wrapup:
+- Deployment

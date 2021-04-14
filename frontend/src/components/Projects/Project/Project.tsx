@@ -5,6 +5,7 @@ import Button from "components/UI/Button/Button";
 import classes from "./Project.module.css";
 import { fundFormatter } from "utils/fund";
 import { IProjectList } from "interfaces/project";
+import { getDate } from "utils/dates";
 
 interface IProps extends RouteComponentProps {
   project: IProjectList;
@@ -41,7 +42,7 @@ const Project: React.FC<IProps> = ({ project, history }) => {
           <SocialLinks socials={project.socials} />
         </div>
         <div className={classes.CreatedTime}>
-          <p>Created on {project.created_on}</p>
+          <p>Created on {getDate(project.created_on)}</p>
         </div>
         <div className={classes.MoreInfo}>
           <Button action={openProjectDetails} type="primary" size="block">

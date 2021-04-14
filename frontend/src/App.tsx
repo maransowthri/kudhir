@@ -11,6 +11,7 @@ import ProjectDetailPage from "pages/ProjectDetailPage/ProjectDetailPage";
 import ReceivedFundsPage from "pages/FundsPage/ReceivedFundsPage/ReceivedFundsPage";
 import TargetedFundsPage from "pages/FundsPage/TargetedFundsPage/TargetedFundsPage";
 import DeliveredFundsPage from "pages/FundsPage/DeliveredFundsPage/DeliveredFundsPage";
+import Error404Page from "components/UI/Error404Page/Error404Page";
 
 const App: React.FC = () => {
   return (
@@ -39,7 +40,7 @@ const App: React.FC = () => {
               exact
               component={DeliveredFundsPage}
             />
-            <Route render={() => <h3>404 Page</h3>} />
+            <Route component={Error404Page} />
           </Switch>
         </main>
       </Layout>

@@ -21,14 +21,14 @@ const initialState = {
   error: "",
 } as IProjectState;
 
-const fetchProjectInProgress: IProjectMethod = (state, _) => {
+const fetchProjectInProgress: IProjectMethod = (state, _): IProjectState => {
   return {
     ...state,
     loading: true,
   };
 };
 
-const fetchProjectFailed: IProjectMethod = (state, _) => {
+const fetchProjectFailed: IProjectMethod = (state, _): IProjectState => {
   return {
     ...state,
     loading: false,
@@ -36,7 +36,10 @@ const fetchProjectFailed: IProjectMethod = (state, _) => {
   };
 };
 
-const fetchProjectDetailSuccess: IProjectMethod = (state, action) => {
+const fetchProjectDetailSuccess: IProjectMethod = (
+  state,
+  action
+): IProjectState => {
   return {
     ...state,
     loading: false,
@@ -44,7 +47,10 @@ const fetchProjectDetailSuccess: IProjectMethod = (state, action) => {
   };
 };
 
-const fetchProjectListSuccess: IProjectMethod = (state, action) => {
+const fetchProjectListSuccess: IProjectMethod = (
+  state,
+  action
+): IProjectState => {
   return {
     ...state,
     loading: false,

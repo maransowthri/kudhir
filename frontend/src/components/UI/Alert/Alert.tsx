@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import classes from "./Alert.module.css";
 
 interface IProps {
@@ -12,15 +12,26 @@ const Alert: React.FC<IProps> = ({ type, message }) => {
   let icon = null;
   let classNames = null;
 
+  useEffect(() => {
+    const timer = setTimeout(removeAlert, 5000);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
+
   const removeAlert = () => {
-    alertRef.current?.remove();
+    alertRef.current?.classList.add(classes.CloseAlert);
   };
 
   if (type === "success") {
     icon = "fas fa-check-circle fa-2x";
     classNames = [classes.Alert, classes.Success].join(" ");
   } else if (type === "error") {
-    subEl = <a href="mailto:support@kudhir.org">Report this to fix it ASAP.</a>;
+    subEl = (
+      <a href="mailto:support@kudhir.org">
+        <span className={classes.Report}>Report</span> this to fix it ASAP.
+      </a>
+    );
     icon = "fas fa-exclamation-circle fa-2x";
     classNames = [classes.Alert, classes.Error].join(" ");
   } else {

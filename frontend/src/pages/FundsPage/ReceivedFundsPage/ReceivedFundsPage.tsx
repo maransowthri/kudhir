@@ -4,39 +4,45 @@ import { IProjectRouterParams } from "interfaces/project";
 import ProjectCrumb from "components/UI/ProjectCrumb/ProjectCrumb";
 import ReceivedFundsTable from "components/FundsTable/ReceivedFundsTable/ReceivedFundsTable";
 import { RouteComponentProps } from "react-router";
-import { IReceivedFunds } from "interfaces/funds";
 import { IRootReducer } from "interfaces/store";
 import { IFundsState } from "store/reducers/funds";
-import { fetchFunds } from "store/actions/funds";
+import { fetchReceivedFunds } from "store/actions/funds";
 import Loader from "components/UI/Loader/Loader";
 import Alert from "components/UI/Alert/Alert";
+import classes from "./ReceivedFundsPage.module.css";
 
 interface IProps extends RouteComponentProps<IProjectRouterParams> {}
 
 const ReceivedFundsPage: React.FC<IProps> = ({ match }) => {
   let result = null;
   const dispatch = useDispatch();
-  const { funds, loading, error } = useSelector<IRootReducer, IFundsState>(
-    (state) => ({ ...state.funds })
-  );
+  const { receivedFunds, loading, error } = useSelector<
+    IRootReducer,
+    IFundsState
+  >((state) => ({ ...state.funds }));
   const slug = match.params.slug;
 
   useEffect(() => {
-    console.log("ComponentDidMount");
-    dispatch(fetchFunds(slug, "RECEIVED"));
+    dispatch(fetchReceivedFunds(slug));
   }, [dispatch, slug]);
 
   if (loading) {
     result = <Loader />;
-  } else if (funds) {
-    result = <ReceivedFundsTable fundsList={funds as IReceivedFunds} />;
+  } else if (receivedFunds) {
+    result = <ReceivedFundsTable fundsList={receivedFunds} />;
   } else {
-    result = <Alert type="error" message={error} />;
+    result = (
+      <>
+        <Alert type="error" message={error} />
+        <p className={classes.NoDataText}>No details found.</p>
+      </>
+    );
   }
 
   return (
     <div>
       <ProjectCrumb slug={slug} />
+      <h3 className={classes.PageTitle}>Received Funds Details</h3>
       {result}
     </div>
   );

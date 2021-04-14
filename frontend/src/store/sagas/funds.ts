@@ -7,24 +7,46 @@ import { put } from "redux-saga/effects";
 import {
   fetchFundsFailed,
   fetchFundsInProgress,
-  fetchFundsSuccess,
+  fetchDeliveredFundsSuccess,
   IFundsDispatchType,
+  fetchReceivedFundsSuccess,
+  fetchTargetedFundsSuccess,
 } from "store/actions/funds";
 
-export function* fetchFundsSaga(action: IFundsDispatchType) {
-  console.log(action);
+export function* fetchDeliveredFundsSaga(action: IFundsDispatchType) {
   yield put(fetchFundsInProgress());
   try {
     const res: Response = yield fetch(
-      `/api/funds/${
-        action.payload?.slug
-      }/${action.payload?.fundsType?.toLowerCase()}`
+      `/api/funds/${action.payload?.slug}/delivered`
     );
-    const data:
-      | IDeliveredFunds
-      | IReceivedFunds
-      | ITargetedFunds = yield res.json();
-    yield put(fetchFundsSuccess(data));
+    const deliveredFunds: IDeliveredFunds = yield res.json();
+    yield put(fetchDeliveredFundsSuccess(deliveredFunds));
+  } catch (err) {
+    yield put(fetchFundsFailed());
+  }
+}
+
+export function* fetchReceivedFundsSaga(action: IFundsDispatchType) {
+  yield put(fetchFundsInProgress());
+  try {
+    const res: Response = yield fetch(
+      `/api/funds/${action.payload?.slug}/received`
+    );
+    const receivedFunds: IReceivedFunds = yield res.json();
+    yield put(fetchReceivedFundsSuccess(receivedFunds));
+  } catch (err) {
+    yield put(fetchFundsFailed());
+  }
+}
+
+export function* fetchTargetedFundsSaga(action: IFundsDispatchType) {
+  yield put(fetchFundsInProgress());
+  try {
+    const res: Response = yield fetch(
+      `/api/funds/${action.payload?.slug}/targeted`
+    );
+    const targetedFunds: ITargetedFunds = yield res.json();
+    yield put(fetchTargetedFundsSuccess(targetedFunds));
   } catch (err) {
     yield put(fetchFundsFailed());
   }

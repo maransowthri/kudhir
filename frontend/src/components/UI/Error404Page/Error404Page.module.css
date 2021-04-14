@@ -1,0 +1,16 @@
+.ErrorSVG {
+  display: block;
+  margin: auto;
+  height: 300px;
+  width: 300px;
+}
+
+.Error404Page {
+  text-align: center;
+}
+
+.ErrorMessage {
+  text-align: center;
+  margin: 1rem 0;
+  font-size: x-large;
+}

@@ -24,12 +24,17 @@ const HomePage: React.FC = () => {
   } else if (projects) {
     result = <Projects projects={projects} />;
   } else {
-    result = <Alert type="error" message={error} />;
+    result = (
+      <>
+        <Alert type="error" message={error} />
+        <p className={classes.NoProjectsText}>No projects found.</p>
+      </>
+    );
   }
 
   return (
     <div>
-      <h3 className={classes.HomePageTitle}>The people who need your help!</h3>
+      <h3 className={classes.PageTitle}>The people who need your help!</h3>
       {result}
     </div>
   );

@@ -1,5 +1,4 @@
 import {
-  FundsType,
   IDeliveredFunds,
   IReceivedFunds,
   ITargetedFunds,
@@ -9,34 +8,64 @@ import { FundsActionType } from "./actionTypes";
 export interface IFundsDispatchType {
   type: FundsActionType;
   payload?: {
-    funds?: IDeliveredFunds | IReceivedFunds | ITargetedFunds;
+    deliveredFunds?: IDeliveredFunds;
+    receivedFunds?: IReceivedFunds;
+    targetedFunds?: ITargetedFunds;
     slug?: string;
-    fundsType?: FundsType;
   };
 }
 
-export const fetchFunds = (
-  slug: string,
-  fundsType: FundsType
+export const fetchDeliveredFunds = (slug: string): IFundsDispatchType => {
+  return {
+    type: "FETCH_DELIVERED_FUNDS_INIT",
+    payload: { slug },
+  };
+};
+
+export const fetchReceivedFunds = (slug: string): IFundsDispatchType => {
+  return {
+    type: "FETCH_RECEIVED_FUNDS_INIT",
+    payload: { slug },
+  };
+};
+
+export const fetchTargetedFunds = (slug: string): IFundsDispatchType => {
+  return {
+    type: "FETCH_TARGETED_FUNDS_INIT",
+    payload: { slug },
+  };
+};
+
+export const fetchDeliveredFundsSuccess = (
+  deliveredFunds: IDeliveredFunds
 ): IFundsDispatchType => {
   return {
-    type: "FETCH_FUNDS_INIT",
-    payload: { slug, fundsType },
+    type: "FETCH_DELIVERED_FUNDS_SUCCESS",
+    payload: { deliveredFunds },
+  };
+};
+
+export const fetchTargetedFundsSuccess = (
+  targetedFunds: ITargetedFunds
+): IFundsDispatchType => {
+  return {
+    type: "FETCH_TARGETED_FUNDS_SUCCESS",
+    payload: { targetedFunds },
+  };
+};
+
+export const fetchReceivedFundsSuccess = (
+  receivedFunds: IReceivedFunds
+): IFundsDispatchType => {
+  return {
+    type: "FETCH_RECEIVED_FUNDS_SUCCESS",
+    payload: { receivedFunds },
   };
 };
 
 export const fetchFundsInProgress = (): IFundsDispatchType => {
   return {
     type: "FETCH_FUNDS_INPROGRESS",
-  };
-};
-
-export const fetchFundsSuccess = (
-  funds: IDeliveredFunds | IReceivedFunds | ITargetedFunds
-): IFundsDispatchType => {
-  return {
-    type: "FETCH_FUNDS_SUCCESS",
-    payload: { funds },
   };
 };
 

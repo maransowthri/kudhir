@@ -24,12 +24,17 @@ const MembersPage: React.FC = () => {
   } else if (members) {
     result = <Members members={members} />;
   } else {
-    result = <Alert type="error" message={error} />;
+    result = (
+      <>
+        <Alert type="error" message={error} />
+        <p className={classes.NoDataText}>No members found.</p>
+      </>
+    );
   }
 
   return (
     <div>
-      <h3 className={classes.MembersPageTitle}>
+      <h3 className={classes.PageTitle}>
         Thanks to following organizations for making this happen!
       </h3>
       {result}

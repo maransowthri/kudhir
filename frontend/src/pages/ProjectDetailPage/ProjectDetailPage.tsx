@@ -35,7 +35,12 @@ const ProjectDetailPage: React.FC<IProps> = ({ match }) => {
       </>
     );
   } else {
-    result = <Alert type="error" message={error} />;
+    result = (
+      <>
+        <Alert type="error" message={error} />
+        <p className={classes.NoDataText}>No details found.</p>
+      </>
+    );
   }
 
   return <div className={classes.ProjectDetailPage}>{result}</div>;

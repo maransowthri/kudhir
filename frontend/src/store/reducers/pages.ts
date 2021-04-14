@@ -24,14 +24,14 @@ const initialState = {
   error: "",
 } as IPagesState;
 
-const fetchPageDataInProgress: IPagesMethod = (state, _) => {
+const fetchPageDataInProgress: IPagesMethod = (state, _): IPagesState => {
   return {
     ...state,
     loading: true,
   };
 };
 
-const fetchPageDataFailed: IPagesMethod = (state, _) => {
+const fetchPageDataFailed: IPagesMethod = (state, _): IPagesState => {
   return {
     ...state,
     loading: false,
@@ -39,7 +39,7 @@ const fetchPageDataFailed: IPagesMethod = (state, _) => {
   };
 };
 
-const fetchPeopleSuccess: IPagesMethod = (state, action) => {
+const fetchPeopleSuccess: IPagesMethod = (state, action): IPagesState => {
   return {
     ...state,
     loading: false,
@@ -47,7 +47,7 @@ const fetchPeopleSuccess: IPagesMethod = (state, action) => {
   };
 };
 
-const fetchMembersSuccess: IPagesMethod = (state, action) => {
+const fetchMembersSuccess: IPagesMethod = (state, action): IPagesState => {
   return {
     ...state,
     loading: false,
@@ -55,7 +55,7 @@ const fetchMembersSuccess: IPagesMethod = (state, action) => {
   };
 };
 
-const fetchPostsSuccess: IPagesMethod = (state, action) => {
+const fetchPostsSuccess: IPagesMethod = (state, action): IPagesState => {
   return {
     ...state,
     loading: false,
